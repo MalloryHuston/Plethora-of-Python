@@ -49,7 +49,7 @@ flask run
 
 Then open up your web browser and enter the following URL in the address field:
 ```
-http://localhost:8000/
+http://localhost:9000/
 ```
 
 ## Requirements
