@@ -52,14 +52,24 @@ Then open up your web browser and enter the following URL in the address field:
 http://localhost:9000/
 ```
 
+## Troubleshooting
+
+To receive error handling from the site via email, please open a second terminal session and enter the following;
+```
+(venv) $ python -m smtpd -n -c DebuggingServer localhost:8025
+```
+
+Leave this session running and go back to the first terminal to enter the following before running the application:
+```
+export MAIL_SERVER=localhost
+export MAIL_PORT=8025
+```
+
 ## Requirements
 ```
 pip install flask
 pip install python-dotenv
 pip install flask-wtf
-pip install flask-sqlalchemy
-pip install flask-migrate
-pip install flask-login
 pip install email-validator
 ```
 
