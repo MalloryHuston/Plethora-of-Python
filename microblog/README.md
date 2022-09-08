@@ -27,23 +27,23 @@ password: seattle
 
 To create the migration repository and all the database migrations, enter the following commands:
 ```
-flask db init
-flask db migrate -m "users table"
-flask db upgrade
-flask db migrate -m "posts table"
-flask db upgrade
-flask db migrate -m "new fields in user model"
-flask db upgrade
+(venv) $ flask db init
+(venv) $ flask db migrate -m "users table"
+(venv) $ flask db upgrade
+(venv) $ flask db migrate -m "posts table"
+(venv) $ flask db upgrade
+(venv) $ flask db migrate -m "new fields in user model"
+(venv) $ flask db upgrade
 ```
 
 To enter information into the Flask database, run the following command:
 ```
-flask shell
+(venv) $ flask shell
 ```
 
 Once you are ready to run your app, please enter this final command:
 ```
-flask run
+(venv) $ flask run
 ```
 
 Then open up your web browser and enter the following URL in the address field:
