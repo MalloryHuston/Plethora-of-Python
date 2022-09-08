@@ -29,11 +29,8 @@ To create the migration repository and all the database migrations, enter the fo
 ```
 (venv) $ flask db init
 (venv) $ flask db migrate -m "users table"
-(venv) $ flask db upgrade
 (venv) $ flask db migrate -m "posts table"
-(venv) $ flask db upgrade
 (venv) $ flask db migrate -m "new fields in user model"
-(venv) $ flask db upgrade
 (venv) $ flask db migrate -m "followers"
 (venv) $ flask db upgrade
 ```
