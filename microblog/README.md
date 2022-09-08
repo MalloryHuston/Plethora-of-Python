@@ -19,10 +19,10 @@ source venv/bin/activate (Mac OS and Linux)
 
 Username information and passwords:
 ```
-user1: robert@example.com
-password: monster
-user2: david@example.com
+user1: david@example.com
 password: seattle
+user2: robert@example.com
+password: monster
 ```
 
 To create the migration repository and all the database migrations, enter the following commands:
