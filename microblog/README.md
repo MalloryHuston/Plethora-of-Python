@@ -63,6 +63,7 @@ Leave this session running and go back to the first terminal to enter the follow
 export MAIL_SERVER=localhost
 export MAIL_PORT=8025
 ```
+<b>On Windows, please use ```set``` instead of ```export```.</b>
 
 ## Requirements
 ```
