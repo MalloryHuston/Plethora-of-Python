@@ -7,8 +7,7 @@ This is an example web application using Python and the Flask framework.
 Create a virtual environment in Python:
 
 ```
-python -m venv venv (Windows)
-python3 -m venv venv (Mac OS and Linux)
+python -m venv venv
 ```
 
 Start your virtual environment in Python by running:
@@ -28,38 +27,51 @@ password: seattle
 
 To create the migration repository and all the database migrations, enter the following commands:
 ```
-flask db init
-flask db migrate -m "users table"
-flask db upgrade
-flask db migrate -m "posts table"
-flask db upgrade
-flask db migrate -m "new fields in user model"
-flask db upgrade
+(venv) $ flask db init
+(venv) $ flask db migrate -m "users table"
+(venv) $ flask db upgrade
+(venv) $ flask db migrate -m "posts table"
+(venv) $ flask db upgrade
+(venv) $ flask db migrate -m "new fields in user model"
+(venv) $ flask db upgrade
+(venv) $ flask db migrate -m "followers"
+(venv) $ flask db upgrade
 ```
 
 To enter information into the Flask database, run the following command:
 ```
-flask shell
+(venv) $ flask shell
 ```
 
 Once you are ready to run your app, please enter this final command:
 ```
-flask run
+(venv) $ flask run
 ```
 
 Then open up your web browser and enter the following URL in the address field:
 ```
-http://localhost:8000/
+http://localhost:9000/
 ```
+
+## Troubleshooting
+
+To receive error handling from the site via email, please open a second terminal session and enter the following;
+```
+(venv) $ python -m smtpd -n -c DebuggingServer localhost:8025
+```
+
+Leave this session running and go back to the first terminal to enter the following before running the application:
+```
+export MAIL_SERVER=localhost
+export MAIL_PORT=8025
+```
+<b>On Windows, please use ```set``` instead of ```export```.</b>
 
 ## Requirements
 ```
 pip install flask
 pip install python-dotenv
 pip install flask-wtf
-pip install flask-sqlalchemy
-pip install flask-migrate
-pip install flask-login
 pip install email-validator
 ```
 
