@@ -34,6 +34,8 @@ To create the migration repository and all the database migrations, enter the fo
 (venv) $ flask db upgrade
 (venv) $ flask db migrate -m "new fields in user model"
 (venv) $ flask db upgrade
+(venv) $ flask db migrate -m "followers"
+(venv) $ flask db upgrade
 ```
 
 To enter information into the Flask database, run the following command:
