@@ -59,8 +59,4 @@ docs/_build/
 target/
 
 # Gedit backup suffix
-<<<<<<< HEAD
 *~
-=======
-*~
->>>>>>> f2fbefbdfe4c601b38356ae1a95d1777c9d9b7f7
