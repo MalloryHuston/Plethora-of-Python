@@ -1,5 +1,6 @@
 """followers
 
+
 Revision ID: a6cfb83c2103
 Revises: f4a7f3062c8a
 Create Date: 2022-09-08 14:51:20.815231
