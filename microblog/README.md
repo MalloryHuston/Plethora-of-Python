@@ -72,5 +72,6 @@ pip install flask-wtf
 pip install email-validator
 ```
 
+
 ## Citations
 Grinberg, Miguel. (August 2022) The Flask Mega-Tutorial (last updated May 2018)[Source Code]. https://blog.miguelgrinberg.com/post/the-flask-mega-tutorial-part-i-hello-world
