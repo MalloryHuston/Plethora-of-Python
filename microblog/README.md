@@ -70,6 +70,8 @@ pip install flask
 pip install python-dotenv
 pip install flask-wtf
 pip install email-validator
+pip install flask-mail
+pip install pyjwt
 ```
 
 ## Citations
