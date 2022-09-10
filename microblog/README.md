@@ -59,8 +59,8 @@ To receive error handling from the site via email, please open a second terminal
 
 Leave this session running and go back to the first terminal to enter the following before running the application:
 ```
-export MAIL_SERVER=localhost
-export MAIL_PORT=8025
+(venv) $ export MAIL_SERVER=localhost
+(venv) $ export MAIL_PORT=8025
 ```
 <b>On Windows, please use ```set``` instead of ```export```.</b>
 
