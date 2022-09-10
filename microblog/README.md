@@ -64,6 +64,15 @@ export MAIL_PORT=8025
 ```
 <b>On Windows, please use ```set``` instead of ```export```.</b>
 
+Or if you want emails sent for real, you can use a real email server by entering the following below in your terminal:
+```
+(venv) $ export MAIL_SERVER=smtp.googlemail.com
+(venv) $ export MAIL_PORT=587
+(venv) $ export MAIL_USE_TLS=1
+(venv) $ export MAIL_USERNAME=<your-gmail-username>
+(venv) $ export MAIL_PASSWORD=<your-gmail-password>
+```
+
 ## Requirements
 ```
 pip install flask
