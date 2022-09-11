@@ -1,8 +1,6 @@
-## Overview
+# Text Adventure
 
-This project was developed as a response to the large number of beginning Python developers who want to learn how to write a text adventure.
-
-Although there are many approaches, this project is designed to be expandable with "pluggable" elements.
+This is an intermediate project composed of a text adventure game, which involves the player exploring and interacting with a world to tell a story. This game takes place in a cave with the player's goal of escaping alive. It also saves game files and you can always reload them whenever you quit.
 
 ## Instructions
 
