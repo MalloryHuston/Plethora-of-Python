@@ -1,7 +1,6 @@
 import wikipedia as wiki
 import argparse as ap
 
-
 parser = ap.ArgumentParser()
 parser.add_argument('keyword', type = str, help = "Search query!!")
 parser.add_argument('--loc', type = str, action = 'store', dest = 'l', help = "Saving location!!")
