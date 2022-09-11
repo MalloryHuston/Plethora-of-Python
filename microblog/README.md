@@ -7,14 +7,14 @@ This is an example web application using Python and the Flask framework.
 Create a virtual environment in Python:
 
 ```
-python -m venv venv
+$ python -m venv venv
 ```
 
 Start your virtual environment in Python by running:
 
 ```
-venv\Scripts\activate (Windows)
-source venv/bin/activate (Mac OS and Linux)
+$ venv\Scripts\activate (Windows)
+$ source venv/bin/activate (Mac OS and Linux)
 ```
 
 Username information and passwords:
