@@ -47,7 +47,7 @@ Once you are ready to run your app, please enter this final command:
 
 Then open up your web browser and enter the following URL in the address field:
 ```
-http://localhost:9000/
+http://localhost:8000/
 ```
 
 ## Troubleshooting
