@@ -25,16 +25,6 @@ Username information and passwords:
 4 trista trista@example.com nursing
 ```
 
-To create the migration repository and all the database migrations, enter the following commands:
-```
-(venv) $ flask db init
-(venv) $ flask db migrate -m "users table"
-(venv) $ flask db migrate -m "posts table"
-(venv) $ flask db migrate -m "new fields in user model"
-(venv) $ flask db migrate -m "followers"
-(venv) $ flask db upgrade
-```
-
 To enter information into the Flask database, run the following command:
 ```
 (venv) $ flask shell
