@@ -2,18 +2,16 @@ from cryptography.fernet import Fernet
 
 
 '''
-# Generate a key and save it in a file
 def write_key():
     key = Fernet.generate_key()
-    with open('/Users/malpal101/Plethora-of-Python/Beginner-Projects/password-manager/key.key', "wb") as key_file:
+    with open("Beginner-Projects/password-manager/key.key", "wb") as key_file:
         key_file.write(key)
 
-write_key()
-'''
+write_key()'''
 
 
 def load_key():
-    file = open('/Users/malpal101/Plethora-of-Python/Beginner-Projects/password-manager/key.key', "rb")
+    file = open("Beginner-Projects/password-manager/key.key", "rb")
     key = file.read()
     file.close()
     return key
@@ -21,9 +19,8 @@ def load_key():
 key = load_key()
 fer = Fernet(key)
 
-
 def view():
-    with open('/Users/malpal101/Plethora-of-Python/Beginner-Projects/password-manager/passwords.txt', 'r') as f:
+    with open('Beginner-Projects/password-manager/passwords.txt', 'r') as f:
         for line in f.readlines():
             data = line.rstrip()
             user, passw = data.split("|")
@@ -35,7 +32,7 @@ def add():
     name = input('Account Name: ')
     pwd = input("Password: ")
 
-    with open('/Users/malpal101/Plethora-of-Python/Beginner-Projects/password-manager/passwords.txt', 'a') as f:
+    with open('Beginner-Projects/password-manager/passwords.txt', 'a') as f:
         f.write(name + "|" + fer.encrypt(pwd.encode()).decode() + "\n")
 
 
@@ -44,6 +41,7 @@ while True:
         "Would you like to add a new password or view existing ones (view, add), press q to quit? ").lower()
     if mode == "q":
         break
+
     if mode == "view":
         view()
     elif mode == "add":
