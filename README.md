@@ -10,3 +10,5 @@ A list of Python 3 programming projects ranging from Beginner to Advanced. A wor
 <code>$ source plethora/bin/activate
 (plethora) $ _</code>
 </pre>
+
+Make sure to run ```pip install -r requirements.txt``` first!
