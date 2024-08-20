@@ -2,7 +2,7 @@
 The classic game of Flappy Bird. Made with Python
 and Pygame. Features pixel perfect collision using masks.
 
-Date Modified:  Aug 25, 2022
+Date Modified:  Aug 19, 2024
 Author: Mallory Huston
 Estimated Work Time: 5 hours
 """
@@ -21,10 +21,16 @@ END_FONT = pygame.font.SysFont("comicsans", 70)
 WIN = pygame.display.set_mode((WIN_WIDTH, WIN_HEIGHT))
 pygame.display.set_caption("Flappy Bird")
 
-pipe_img = pygame.transform.scale2x(pygame.image.load(os.path.join("Pygame/Flappy-Bird/imgs","pipe.png")).convert_alpha())
-bg_img = pygame.transform.scale(pygame.image.load(os.path.join("Pygame/Flappy-Bird/imgs","bg.png")).convert_alpha(), (600, 900))
-bird_images = [pygame.transform.scale2x(pygame.image.load(os.path.join("Pygame/Flappy-Bird/imgs","bird" + str(x) + ".png"))) for x in range(1,4)]
-base_img = pygame.transform.scale2x(pygame.image.load(os.path.join("Pygame/Flappy-Bird/imgs","base.png")).convert_alpha())
+##### Macintosh #####
+#"/Users/malpal101/Plethora-of-Python/Pygame/Flappy-Bird/imgs"
+
+##### Windows #####
+#"C:\Users\User\Plethora-of-Python\Pygame\Flappy-Bird\imgs"
+
+pipe_img = pygame.transform.scale2x(pygame.image.load(os.path.join("/Users/malpal101/Plethora-of-Python/Pygame/Flappy-Bird/imgs","pipe.png")).convert_alpha())
+bg_img = pygame.transform.scale(pygame.image.load(os.path.join("/Users/malpal101/Plethora-of-Python/Pygame/Flappy-Bird/imgs","bg.png")).convert_alpha(), (600, 900))
+bird_images = [pygame.transform.scale2x(pygame.image.load(os.path.join("/Users/malpal101/Plethora-of-Python/Pygame/Flappy-Bird/imgs","bird" + str(x) + ".png"))) for x in range(1,4)]
+base_img = pygame.transform.scale2x(pygame.image.load(os.path.join("/Users/malpal101/Plethora-of-Python/Pygame/Flappy-Bird/imgs","base.png")).convert_alpha())
 
 class Bird:
     """
