@@ -1,0 +1,10 @@
+Alphanumeric key g pressed
+'g' released
+Alphanumeric key e pressed
+'e' released
+Alphanumeric key e pressed
+'e' released
+Alphanumeric key k pressed
+'k' released
+Alphanumeric key s pressed
+'s' released
