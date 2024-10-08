@@ -3,7 +3,7 @@ import random
 print("")
 print("Sims 3 Random Face Generator")
 print("For use with NRAAS Master Controller Integration")
-print("Written by Pleasant Sims")
+print("Written by Mallory Huston")
 print("Inspired by chemtale's Sims 2 randomizer")
 print("") 
 
