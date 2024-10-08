@@ -4,7 +4,7 @@ A list of Python 3 programming projects ranging from Beginner to Advanced. A wor
 
 Make sure to run ```pip install -r requirements.txt``` first!
 
-### How to Update the GitHub Repository
+### Update Repository on GitHub
 
 ```
 $ git status
