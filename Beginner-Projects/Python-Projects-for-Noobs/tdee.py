@@ -1,3 +1,5 @@
+import math
+
 def calculate_bmr(weight_lbs, height_inches, age, gender):
     """
     Calculate Basal Metabolic Rate (BMR) using the Mifflin-St Jeor equation.
@@ -23,17 +25,22 @@ def calculate_bmr(weight_lbs, height_inches, age, gender):
         raise ValueError("Gender must be 'male' or 'female'")
     return bmr
 
-def calculate_tdee(bmr, activity_level):
+def calculate_tdee(weight_lbs, height_inches, age, gender, activity_level):
     """
     Calculate Total Daily Energy Expenditure (TDEE).
 
     Parameters:
-    - bmr (float): Basal Metabolic Rate
+    - weight_lbs (float): Weight in pounds
+    - height_inches (float): Height in inches
+    - age (int): Age in years
+    - gender (str): Gender ('male' or 'female')
     - activity_level (str): Activity level ('sedentary', 'light', 'moderate', 'active', 'very active', 'extra active')
 
     Returns:
-    - float: TDEE value
+    - int: TDEE value rounded down to the nearest whole number
     """
+    bmr = calculate_bmr(weight_lbs, height_inches, age, gender)
+
     activity_multipliers = {
         'sedentary': 1.2,
         'light': 1.375,
@@ -43,10 +50,10 @@ def calculate_tdee(bmr, activity_level):
         'extra active': 1.9
     }
     if activity_level.lower() not in activity_multipliers:
-        raise ValueError("Activity level must be one of: 'sedentary', 'light', 'moderate', 'active', 'very active', 'extra active'")
+        raise ValueError("Activity level must be one of: 'sedentary', 'light', 'moderate', 'active' 'very active', 'extra active'")
     
     tdee = bmr * activity_multipliers[activity_level.lower()]
-    return tdee
+    return math.ceil(tdee)
 
 def main():
     try:
@@ -59,11 +66,9 @@ def main():
             "Enter your activity level (sedentary, light, moderate, active, very active, extra active): "
         )
         
-        bmr = calculate_bmr(weight, height, age, gender)
-        tdee = calculate_tdee(bmr, activity_level)
+        tdee = calculate_tdee(weight, height, age, gender, activity_level)
 
-        print(f"\nYour BMR is: {bmr:.2f} calories/day")
-        print(f"Your TDEE is: {tdee:.2f} calories/day")
+        print(f"\nYour TDEE is: {tdee} calories/day")
     except ValueError as e:
         print(f"Input error: {e}")
 
