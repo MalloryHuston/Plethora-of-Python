@@ -5,13 +5,9 @@ from pywebio.output import put_html, put_text, put_buttons, clear
 from pywebio.session import hold
 
 def get_fun_fact():
-    """Fetch and display a random fun fact."""
-    # Clear the screen
-    clear()
-
-    # Display the header
-    display_header()
-
+    """
+    Fetch and return a random fun fact as a string.
+    """
     # URL to fetch the data from
     url = "https://uselessfacts.jsph.pl/random.json?language=en"
 
@@ -24,23 +20,30 @@ def get_fun_fact():
         data = response.json()
 
         # Extract the 'text' from the JSON data
-        useless_fact = data.get('text', 'No fact available at the moment.')
+        return data.get('text', 'No fact available at the moment.')
 
     except requests.exceptions.RequestException as e:
         # Handle any request exceptions
-        useless_fact = f"An error occurred: {e}"
+        return f"An error occurred: {e}"
 
-    # Display the fun fact
-    put_text(useless_fact, style='color:blue; font-size: 30px')
-
+def update_fact():
+    """
+    Update the fun fact displayed on the screen.
+    """
+    clear()  # Clear the existing output
+    display_header()  # Redisplay the header
+    fact = get_fun_fact()  # Fetch the new fact
+    put_text(fact)  # Display the fact
     # Display the "Click me" button
     put_buttons(
         [{'label': 'Click me', 'value': 'get_fact', 'color': 'success'}],
-        onclick=get_fun_fact
+        onclick=lambda _: update_fact()
     )
 
 def display_header():
-    """Display the Fun Fact Generator header."""
+    """
+    Display the Fun Fact Generator header.
+    """
     put_html(
         '<p align="left">'
         '<h2><img src="https://media.geeksforgeeks.org/wp-content/uploads/20210720224119/MessagingHappyicon.png" width="7%"> Fun Fact Generator</h2>'
@@ -48,14 +51,16 @@ def display_header():
     )
 
 def fun_fact_app():
-    """Main app function for the Fun Fact Generator."""
+    """
+    Main app function for the Fun Fact Generator.
+    """
     # Display the header
     display_header()
 
     # Display the "Click me" button initially
     put_buttons(
         [{'label': 'Click me', 'value': 'get_fact', 'color': 'success'}],
-        onclick=get_fun_fact
+        onclick=lambda _: update_fact()
     )
 
     hold()  # Hold the session open
