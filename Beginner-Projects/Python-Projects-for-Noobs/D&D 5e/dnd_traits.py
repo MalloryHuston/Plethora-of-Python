@@ -366,6 +366,7 @@ def generate_character():
     flaw = random.choice(flaws)  # Pick 1 random flaw
     return traits, ideal, bond, flaw
 
+
 # Function to display random character traits in the GUI
 def display_character():
     traits, ideal, bond, flaw = generate_character()
@@ -379,41 +380,53 @@ def display_character():
 app = tk.Tk()
 app.title("D&D Character Generator")
 
+
 # Add labels for section headers and content
 traits_header = tk.Label(app, text="Personality Traits", font=("Arial", 14, "bold"), pady=10)
 traits_header.pack()
 
+
 traits_label = tk.Label(app, text="", wraplength=400, justify="left", padx=10, pady=5)
 traits_label.pack()
+
 
 ideal_header = tk.Label(app, text="Ideal", font=("Arial", 14, "bold"), pady=10)
 ideal_header.pack()
 
+
 ideal_label = tk.Label(app, text="", wraplength=400, justify="left", padx=10, pady=5)
 ideal_label.pack()
+
 
 bond_header = tk.Label(app, text="Bond", font=("Arial", 14, "bold"), pady=10)
 bond_header.pack()
 
+
 bond_label = tk.Label(app, text="", wraplength=400, justify="left", padx=10, pady=5)
 bond_label.pack()
+
 
 flaw_header = tk.Label(app, text="Flaw", font=("Arial", 14, "bold"), pady=10)
 flaw_header.pack()
 
+
 flaw_label = tk.Label(app, text="", wraplength=400, justify="left", padx=10, pady=5)
 flaw_label.pack()
+
 
 # Add a "Generate" button
 generate_button = tk.Button(app, text="Generate", command=display_character)
 generate_button.pack(pady=10)
 
+
 # Add an "Exit" button
 exit_button = tk.Button(app, text="Exit", command=app.quit)
 exit_button.pack(pady=10)
 
+
 # Display the initial character traits
 display_character()
+
 
 # Run the application
 app.mainloop()
