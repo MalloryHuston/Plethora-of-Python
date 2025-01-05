@@ -82,10 +82,30 @@ def calculate_level_and_xp(xp):
     return level, next_level_xp
 
 def main():
-    total_xp = 0
     print("Welcome to the XP and Level Tracker!")
-    print("Enter the Challenge Rating (CR) of each enemy you defeat. Type 'done' to finish.")
+    
+    # Ask for the initial XP to determine current level
+    while True:
+        try:
+            total_xp = int(input("Enter your current XP: "))
+            if total_xp < 0:
+                print("XP cannot be negative. Please try again.")
+                continue
+            break
+        except ValueError:
+            print("Invalid input. Please enter a valid number.")
 
+    # Calculate starting level
+    level, next_level_xp = calculate_level_and_xp(total_xp)
+    print(f"\nStarting Stats:")
+    print(f"Current Level: {level}")
+    if isinstance(next_level_xp, int):
+        print(f"XP needed for next level: {next_level_xp - total_xp}")
+    else:
+        print(next_level_xp)  # Max level message
+
+    print("\nNow, enter the Challenge Rating (CR) of each enemy you defeat. Type 'done' to finish.")
+    
     while True:
         user_input = input("Enter CR of defeated enemy (or 'done' to finish): ").strip().lower()
         if user_input == 'done':
