@@ -283,7 +283,7 @@ pydata-sphinx-theme==0.15.2
 PyDispatcher==2.0.7
 pydub==0.25.1
 pyflakes==3.2.0
-pygame==2.5.2
+pygame==2.6.1
 PyGetWindow==0.0.9
 PyGithub==2.3.0
 Pygments==2.17.2
