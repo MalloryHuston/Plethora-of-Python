@@ -7,7 +7,7 @@ body = "This is a test email from Python!"
 sender_email = "mallorylhuston@gmail.com"
 receiver_email = "mallorylhuston@gmail.com"
 password = input("Enter your password: ")
-# Password: yqzjqqnzawcbxhna 
+# Password: yqzjqqnzawcbxhna
 
 message = EmailMessage()
 message["From"] = sender_email
