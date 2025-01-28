@@ -9,7 +9,6 @@ try:
     import os
 except:
     import install_requirements  # install packages
-
     import pygame
     import sys
     import math
@@ -19,6 +18,7 @@ except:
     import os
 
 screen = pygame.display.set_mode((800, 800))
+
 
 class spot:
     def __init__(self, x, y):
@@ -34,7 +34,7 @@ class spot:
         self.value = 1
 
     def show(self, color, st):
-        if self.closed == False :
+        if self.closed == False:
             pygame.draw.rect(screen, color, (self.i * w, self.j * h, w, h), st)
             pygame.display.update()
 
@@ -96,6 +96,7 @@ for i in range(0,row):
     grid[i][0].obs = True
     grid[i][row-1].obs = True
 
+
 def onsubmit():
     global start
     global end
@@ -105,6 +106,7 @@ def onsubmit():
     end = grid[int(ed[0])][int(ed[1])]
     window.quit()
     window.destroy()
+
 
 window = Tk()
 label = Label(window, text='Start(x,y): ')
@@ -129,6 +131,7 @@ mainloop()
 pygame.init()
 openSet.append(start)
 
+
 def mousePress(x):
     t = x[0]
     w = x[1]
@@ -139,6 +142,7 @@ def mousePress(x):
         if acess.obs == False:
             acess.obs = True
             acess.show((255, 255, 255), 0)
+
 
 end.show((255, 8, 127), 0)
 start.show((255, 8, 127), 0)
@@ -165,9 +169,10 @@ for i in range(cols):
     for j in range(row):
         grid[i][j].addNeighbors(grid)
 
+
 def heurisitic(n, e):
     d = math.sqrt((n.i - e.i)**2 + (n.j - e.j)**2)
-    #d = abs(n.i - e.i) + abs(n.j - e.j)
+    # d = abs(n.i - e.i) + abs(n.j - e.j)
     return d
 
 
@@ -194,7 +199,7 @@ def main():
             Tk().wm_withdraw()
             result = messagebox.askokcancel('Program Finished', ('The program finished, the shortest distance \n to the path is ' + str(temp) + ' blocks away, \n would you like to re run the program?'))
             if result == True:
-                os.execl(sys.executable,sys.executable, *sys.argv)
+                os.execl(sys.executable, sys.executable, *sys.argv)
             else:
                 ag = True
                 while ag:
@@ -241,4 +246,3 @@ while True:
         pygame.quit()
     pygame.display.update()
     main()
-
