@@ -9,7 +9,8 @@ def save_data(filepath, data):
     with open(filepath, "w") as f:
         json.dump(data, f)
 
-#save_data("test.json", {"key": "value"})
+# save_data("test.json", {"key": "value"})
+
 
 def load_data(filepath):
     try:
