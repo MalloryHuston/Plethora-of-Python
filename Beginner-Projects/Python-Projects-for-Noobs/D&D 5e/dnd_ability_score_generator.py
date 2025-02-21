@@ -1,15 +1,18 @@
 import random
 
+
 def roll_4d6_drop_lowest():
     """Roll 4 six-sided dice and drop the lowest one."""
     rolls = [random.randint(1, 6) for _ in range(4)]    # Roll four 6-sided dice
     rolls.sort()    # Sort the rolls to easily drop the lowest
     return sum(rolls[1:])   # Sum the top 3 dice (drop the lowest one)
 
+
 def generate_ability_scores():
     """Generate 6 ability scores by rolling 4d6 and dropping the lowest roll."""
     ability_scores = [roll_4d6_drop_lowest() for _ in range(6)] # Roll 6 times
     return ability_scores
+
 
 def main():
     """Main function to run the script and ask if the user wants to reroll their ability scores."""
@@ -28,7 +31,7 @@ def main():
             if rerun == 'n':
                 print("Exiting the program. Have fun with your character!")
                 return  # Exit the entire program
-        
+
             else:
                 print("Invalid input. Please enter 'y' or 'n'.")
                 continue
