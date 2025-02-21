@@ -38,6 +38,7 @@ def get_xp_from_cr(cr):
     }
     return cr_to_xp.get(cr, 0)  # Default to 0 if CR is not in table
 
+
 def calculate_level_and_xp(xp):
     # D&D 5e XP Thresholds
     xp_table = {
@@ -81,9 +82,10 @@ def calculate_level_and_xp(xp):
 
     return level, next_level_xp
 
+
 def main():
     print("Welcome to the XP and Level Tracker!")
-    
+
     # Ask for the initial XP to determine current level
     while True:
         try:
@@ -105,22 +107,22 @@ def main():
         print(next_level_xp)  # Max level message
 
     print("\nNow, enter the Challenge Rating (CR) of each enemy you defeat. Type 'done' to finish.")
-    
+
     while True:
         user_input = input("Enter CR of defeated enemy (or 'done' to finish): ").strip().lower()
         if user_input == 'done':
             break
-        
+
         try:
             cr = float(user_input)
             xp_gained = get_xp_from_cr(cr)
             if xp_gained == 0:
                 print("Invalid CR or no XP awarded for this CR. Try again.")
                 continue
-            
+
             total_xp += xp_gained
             level, next_level_xp = calculate_level_and_xp(total_xp)
-            
+
             print(f"Enemy defeated! Gained {xp_gained} XP.")
             print(f"Total XP: {total_xp}")
             print(f"Current Level: {level}")
@@ -139,6 +141,7 @@ def main():
         print(f"XP needed for next level: {next_level_xp - total_xp}")
     else:
         print(next_level_xp)
+
 
 if __name__ == "__main__":
     main()
