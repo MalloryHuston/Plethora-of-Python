@@ -5,6 +5,7 @@ BASE_URL = f"htt[s://api.freecurrencyapi.com/v1/latest?apikey={API_KEY}"
 
 CURRENCIES = ["USD", "EUR", "GBP", "JPY", "CAD", "AUD", "CNY", "KRW", "INR"]
 
+
 def convert_currency(base):
     currencies = ",".join(CURRENCIES)
     url = f"{BASE_URL}&base_currency={base}&currencies={currencies}"
@@ -15,7 +16,8 @@ def convert_currency(base):
     except:
         print("Invalid currency.")
         return None
-    
+
+
 while True:
     base = input("Enter the base currency (q for quit): ").upper()
 

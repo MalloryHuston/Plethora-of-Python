@@ -12,10 +12,11 @@ destination_dir = "/Users/malpal101/Desktop/Backups"
 # source_dir = "C:\Users\User\Pictures\Screenshots"
 # destination_dir = "C:\Users\User\Desktop\Backups"
 
+
 def copy_folder_to_directory(source, dest):
     today = datetime.date.today()
     dest_dir = os.path.join(dest, str(today))
-    
+
     try:
         shutil.copytree(source, dest_dir)
         print(f"Folder copied to: {dest_dir}")

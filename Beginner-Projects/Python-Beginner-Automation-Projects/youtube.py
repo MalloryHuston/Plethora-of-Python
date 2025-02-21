@@ -2,6 +2,7 @@ from pytube import YouTube
 import tkinter as tk
 from tkinter import filedialog
 
+
 def download_video(url, save_path):
     try:
         yt = YouTube(url)
@@ -12,12 +13,14 @@ def download_video(url, save_path):
     except Exception as e:
         print(e)
 
+
 def open_file_dialog():
     folder = filedialog.askdirectory()
     if folder:
         print(f"Selected folder: {folder}")
 
     return folder
+
 
 if __name__ == "__main__":
     root = tk.Tk()
