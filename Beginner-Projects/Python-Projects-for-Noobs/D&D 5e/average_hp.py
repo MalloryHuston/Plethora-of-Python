@@ -13,10 +13,10 @@ def get_average_hp(class_levels, constitution_mod, tough_feat, hill_dwarf, draco
 
     # Define hit dice per class (D&D 5e standard)
     hit_dice = {
-        "barbarian": 12,
+        "artificer": 8, "barbarian": 12,
         "fighter": 10, "paladin": 10, "ranger": 10,
         "bard": 8, "cleric": 8, "druid": 8, "monk": 8, "rogue": 8, "warlock": 8,
-        "sorcerer": 6, "wizard": 6,
+        "blood hunter": 10, "sorcerer": 6, "wizard": 6,
     }
 
     total_hp = 0
