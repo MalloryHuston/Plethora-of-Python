@@ -12,6 +12,6 @@ def random_phone_num_generator():
     return '({}){}-{}'.format(first, second, last)
 
 
-n = int(input("Enter Value of n: "))
+n = int(input("How many random different phone numbers do you want? "))
 for i in range(0, n):
     print(random_phone_num_generator())
