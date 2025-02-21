@@ -2,6 +2,7 @@ import tkinter as tk
 import random
 import re
 
+
 def roll_dice_with_mode():
     input_text = dice_entry.get().strip()
     result_label.config(text="")  # Clear previous results
@@ -17,10 +18,11 @@ def roll_dice_with_mode():
             match = re.match(r"(\d+)d(\d+)([+-]\d+)?", roll.strip().lower())
             if not match:
                 raise ValueError("Invalid input format")
-            
+
             num = int(match.group(1))  # Number of dice
             die = int(match.group(2))  # Sides of the dice
-            modifier = int(match.group(3)) if match.group(3) else 0  # Modifier (+/- value)
+            # Modifier (+/- value)
+            modifier = int(match.group(3)) if match.group(3) else 0
 
             for _ in range(num):
                 if mode == "Normal":
@@ -50,10 +52,12 @@ def roll_dice_with_mode():
             fg="red"
         )
 
+
 def reset_app():
     dice_entry.delete(0, tk.END)
     result_label.config(text="", font=("Arial", 16), fg="black")
     mode_var.set("Normal")
+
 
 # Initialize the Tkinter app
 app = tk.Tk()
