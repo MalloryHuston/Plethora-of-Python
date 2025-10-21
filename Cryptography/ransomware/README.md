@@ -20,3 +20,32 @@ Now let's hold these files for ransom! Let's encrypt those suckers right now! He
 <pre>
 <code>$ nano voldemort.py</code>
 </pre>
+
+Write this code in the following ``voldemort.py`` file:
+
+<details>
+<summary>💻 First example of holding these files for ransom:</summary>
+
+```python
+#!/usr/bin/env python3
+import os
+
+# Let's find some files!
+files = []
+
+for file in os.listdir():
+    if file == "voldemort.py":
+        continue
+    if os.path.isfile(file):
+        files.append(file)
+
+print(files)
+```
+</details>
+
+When you first run ``voldemort.py`` in your terminal, you should see the following output:
+
+<pre>
+<code>$ python voldemort.py
+['hey.txt', 'pleasedonthurtme.txt', 'file.txt', 'file2.txt']</code>
+</pre>
