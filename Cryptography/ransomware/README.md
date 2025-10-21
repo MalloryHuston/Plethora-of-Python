@@ -145,7 +145,7 @@ Wait, where is ``thekey.key``? Don't worry! It is still hidden and we can finall
 file.txt             hey.txt              thekey.key
 file2.txt            pleasedonthurtme.txt voldemort.py
 $ cat thekey.key
-l-4zrPy0VkR8pDJnGvsxyy2UEXGiV0AKkpEQR-fzD14=%</code>
+se_by38p9NVVsWezjKWbKgdztEl1GhHZsbMwcGqei84=%</code>
 </pre>
 
 **Step 4:**
