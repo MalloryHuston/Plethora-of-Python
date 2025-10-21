@@ -17,7 +17,7 @@ $ pip install -r requirements.txt
 $ python get_links.py
 ```
 You will then be asked which webpage you would like to analyze.
-After that the extracted links will be saved as an array in `myLinks.txt`.
+After that the extracted links will be saved as an array in ``myLinks.txt``.
 
 
 ## *Authors' Names*
