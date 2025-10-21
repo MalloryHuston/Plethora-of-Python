@@ -96,7 +96,7 @@ b'nDcZ_UIVfpECWw2ezj2T4RKHg7i_7ARgMtHXEVxarfQ='</code>
 </pre>
 
 **Step 3:**
-Obviously, we don't want to print our key right out there in the open where the user can see it. We want the user to give us money, but we do need to save the key into another file for safety so we can unlock the files later:
+Obviously, we don't want to print our key right out there in the open where the user can see it. We want the user to give us money, but we do need to save the key into another file for safety so we can unlock the files later *after* we get paid 😉:
 
 <pre>
 <code>$ nano voldemort.py</code>
