@@ -4,7 +4,7 @@ Scrape any Wikipedia article with image (optional) without opening any browser.
 
 ## Instructions
 
-Type ```python wiki.py --help``` to know how to use it.
+Type ```python wiki.py --h``` or ```python wiki.py --help``` to learn how to use it.
 
 <b>Here is an example of how to run the program when you want to look up Morgan Freeman (Windows version):</b>
 
