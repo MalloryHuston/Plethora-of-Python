@@ -13,7 +13,7 @@ $ cd ransomware
 $ echo "This is a file" > file.txt
 $ echo "Leave me alone" > file2.txt
 $ echo "Another one" > hey.txt
-$ echo "one more" > pleasedonthurtme.txt</code>
+$ echo "One more time" > pleasedonthurtme.txt</code>
 </pre>
 
 Now let's hold these files for ransom! Let's encrypt those suckers right now! Here we go:
