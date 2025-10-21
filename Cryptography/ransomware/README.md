@@ -368,7 +368,20 @@ Then run ``decrypt.py`` *again* and you should see the following output:
 
 <pre>
 <code>$ python decrypt.py
-['file2.txt', 'file.txt', 'hey.txt', 'pleasedonthurtme.txt']</code>
+['file2.txt', 'file.txt', 'hey.txt', 'pleasedonthurtme.txt']
+Enter the secret password to decrypt all of your files:</code>
 </pre>
 
-Now you can see that all of the files have finally been decrypted!!!
+If you enter the wrong password, you get the following message:
+
+<pre>
+<code>Sorry not sorry, but you entered da wong secret password. Send me more Bitcoin! 🤑🤑🤑</code>
+</pre>
+
+If you enter the correct password after finally paying me enough Bitcoin to avoid getting blackmailed, you receive the following message:
+
+<pre>
+<code>Congratulations! All of your files have been decrypted. Enjoy your coffee ️❤ ☕ ❤</code>
+</pre>
+
+Good job! You finally have all of your files back, good as new! You've finally made your dad proud. Enjoy it while it lasts, take care 😉
