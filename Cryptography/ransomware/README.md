@@ -149,7 +149,7 @@ l-4zrPy0VkR8pDJnGvsxyy2UEXGiV0AKkpEQR-fzD14=%</code>
 </pre>
 
 **Step 4:**
-Now this is where things start to get interesting. We will be pushing our ``thekey.key`` file into our code for ``voldemort.py`` so all the other files will be permanently encrypted. In other words, the poor user can now only see those files as gibberish:
+Now this is where things start to get interesting. We will be pushing our ``thekey.key`` file into the code for our ``voldemort.py`` file so that all the other files will be encrypted. In other words, the poor user can now only see those files as gibberish:
 
 <pre>
 <code>$ nano voldemort.py</code>
@@ -222,4 +222,19 @@ $ cat hey.txt
 gAAAAABo9_vsLnZX08uVJR-veRrK-SNBhBLB3oLAhxl850VmOYnSGTkjLoPmHzNGKmjbZNBcOMMUUxLUKpN50_XdErY_C-TmzgMD_O6pzhllzdzZ-kYL8zKEgDI7VSAsSTsRkY12-kNpcLuQnvQz_7KDCqFXE6N-605rrYo0tQr2gd5RIp2_IoyHJBWT1etHcMSjkJ3u8IXLhcf3_h6-9RHkMlRTFkxFFQ==%
 $ cat pleasedonthurtme.txt
 gAAAAABo9_vsBkcYTvBVAh46_xe24bRQtPJLbmbZj2RQhzY6XFW5NtPQZukDfkAkzyH-KDu5rrnAhd1dZjGKjtNM7VR3U_DZs8-FtHKCU2MbjfpTeA59CJel17U577amMDzeiJV5RWF0L4CTXBwR1a8_4TRdTKNReT7DP4nzIc73iprGF9qqjQbPOJJmBVofby7mbYmRJCC9F53KMvd-NM9xFhyfu-q8uA==%</code>
+</pre>
+
+Fortunately for us hackers, we have a new ``thekey.key`` and that is the key to unlocking these files:
+
+<pre>
+<code>$ cat thekey.key
+uGb51hGWiq-3FEslUhjYNDn2HBWs8JXl-X1RHUqiiSw=%</code>
+</pre>
+
+**Step 5:**
+Now we can unlock all these files once and for all by writing a ``decrypt.py`` file. Luckily, it is already very similar to the ``voldemort.py`` (AKA encrypting) file:
+
+<pre>
+<code>$ cp voldemort.py decrypt.py
+$ nano decrypt.py</code>
 </pre>
