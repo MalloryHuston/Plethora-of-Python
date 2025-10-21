@@ -6,10 +6,17 @@ Scrape any Wikipedia article with image (optional) without opening any browser.
 
 Type ```python wiki.py --help``` to know how to use it.
 
-<b>Here is an example of how to run the program when you want to look up Morgan Freeman:</b>
+<b>Here is an example of how to run the program when you want to look up Morgan Freeman (Windows version):</b>
 
 ```
 python wiki.py "morgan freeman" --loc "c:/users/user/desktop" -i
 ```
+
+<b>Now here's how to do it if you want to look up Morgan Freeman (Mac OS version):</b>
+
+```
+python wiki.py "morgan freeman" --loc "/Users/malpal101/Desktop" -i
+```
+
 ## Demo
 ![Demo](https://github.com/MalloryHuston/Plethora-of-Python/blob/main/Web-Scraping/Wikipedia-Scraper/wiki_extractor.gif)
