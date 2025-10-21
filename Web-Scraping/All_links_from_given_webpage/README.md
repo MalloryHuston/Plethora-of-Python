@@ -1,4 +1,4 @@
-# All Links from given Webpage
+# All Links from Given Webpage
 
 This script retrieves all links from a given Webpage and saves them as a ``.txt`` file
 
