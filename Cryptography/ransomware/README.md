@@ -43,6 +43,7 @@ for file in os.listdir():
 print(files)
 
 ```
+
 </details>
 
 When you first run ``voldemort.py`` in your terminal, you should see the following output:
@@ -85,6 +86,7 @@ key = Fernet.generate_key()
 print(key)
 
 ```
+
 </details>
 
 When you next run ``voldemort.py``, you should see the following output for your key:
@@ -129,6 +131,7 @@ with open("thekey.key", "wb") as thekey:
     thekey.write(key)
 
 ```
+
 </details>
 
 Run ``voldemort.py`` and you should see the following output:
@@ -194,6 +197,7 @@ print(
 )
 
 ```
+
 </details>
 
 Make one quick goodbye to each ``.txt`` file before they get encrypted by your mom:
@@ -277,6 +281,7 @@ for file in files:
         thefile.write(contents_decrypted)
 
 ```
+
 </details>
 
 Run ``decrypt.py`` and you should see the following output:
@@ -354,6 +359,7 @@ else:
     )
 
 ```
+
 </details>
 
 Run ``voldemort.py`` *again* and you should see the following output:
