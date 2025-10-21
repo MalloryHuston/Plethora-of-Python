@@ -292,5 +292,3 @@ Another one
 $ cat pleasedonthurtme.txt
 One more time</code>
 </pre>
-
-
