@@ -36,5 +36,5 @@ if user_phrase == secret_phrase:
 else:
     print(
         "Sorry not sorry, but you entered da wong secret password. "
-        "Send me more Bitcoin! 🤑"
+        "Send me more Bitcoin! 🤑🤑🤑"
     )
