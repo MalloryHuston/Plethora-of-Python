@@ -28,7 +28,7 @@ if user_phrase == secret_phrase:
         with open(file, "wb") as thefile:
             thefile.write(contents_decrypted)
         print(
-            "Congrats, your files have been decrypted. "
+            "Congratulations! All of your files have been decrypted. "
             "Enjoy your coffee ️❤ ☕ ❤"
         )
 else:
