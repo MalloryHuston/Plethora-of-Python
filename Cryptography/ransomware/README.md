@@ -92,7 +92,7 @@ When you next run ``voldemort.py``, you should see the following output for your
 <pre>
 <code>$ python voldemort.py
 ['file2.txt', 'file.txt', 'hey.txt', 'pleasedonthurtme.txt']
-b'nDcZ_UIVfpECWw2ezj2T4RKHg7i_7ARgMtHXEVxarfQ='</code>
+b'8QVEe4MBoSLINxTpyOExsqrL5XiOks5g1_w-xF-OAmk='</code>
 </pre>
 
 **Step 3:**
