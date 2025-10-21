@@ -49,7 +49,7 @@ When you first run ``voldemort.py`` in your terminal, you should see the followi
 
 <pre>
 <code>$ python voldemort.py
-['hey.txt', 'pleasedonthurtme.txt', 'file.txt', 'file2.txt']</code>
+['file2.txt', 'file.txt', 'hey.txt', 'pleasedonthurtme.txt']</code>
 </pre>
 
 **Step 2:**
