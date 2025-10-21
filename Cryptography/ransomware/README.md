@@ -221,20 +221,20 @@ This is the moment we've all been waiting for. Now all these ``.txt`` files have
 
 <pre>
 <code>$ cat file.txt
-gAAAAABo9_vsmrW0ocPft7966tBWfmDGPGuULoBZLck3RAbj2MPsLUWLoErkInZD5hWc4MVuuBzs99_EzxOvVCckm1kSqq27hhhO0Atscgp6N4Y73BcN6nIJ9hV0Lf6TcccX0b4NQxdOHP0vFXQ4wHA8eipTaASBhfl_02kekjYlbtDo5fOhWPnO8mDwYHcrxrblkOQwmvhm9_kwUKShDc4Ign2bk1D72A==%
+gAAAAABo-Awg21o-xvSxpDgNGSmIIp7-dnngyWuPg7LrHrk3natLfkXeQ6tmOUmFEEjF7Y2RiGlSA4qUAzCUuENsnPWvMN9M_A==%
 $ cat file2.txt
-gAAAAABo9_vsnw_nYyQ_29Z-Ol9W322Qf6hScuHtGS6YgB8A1mik3dlDoKi11PrfFGDIoDr22ddLw-yeT3D-dulUuvQBz-t0LB02vJhdmjJFBgLUCYl0FajFaIyYXb31dkrUlYLoSuG7FPchBeT4EG6-1lllQFbV9QBQlKsPXNZOLU6j551Q54Kg4XhpHPTEuym02dZaC0YOIn7B5hFFj8EtROpXKqqDHw==%
+gAAAAABo-Awg7t0A_gnTwpl0wWT8wQ5n_H_8bMYAUkNSaF3matNYFsdLnL5Va1oHzkPf1er3fPCKdENvHEdgdfbz_ezx6MiHcg==%
 $ cat hey.txt
-gAAAAABo9_vsLnZX08uVJR-veRrK-SNBhBLB3oLAhxl850VmOYnSGTkjLoPmHzNGKmjbZNBcOMMUUxLUKpN50_XdErY_C-TmzgMD_O6pzhllzdzZ-kYL8zKEgDI7VSAsSTsRkY12-kNpcLuQnvQz_7KDCqFXE6N-605rrYo0tQr2gd5RIp2_IoyHJBWT1etHcMSjkJ3u8IXLhcf3_h6-9RHkMlRTFkxFFQ==%
+gAAAAABo-AwgVjmPsRVbL8dOGVu3vb6irWteZ-hFoJmatlHmUo7OzaKfLYS8sWJJcbEOG8YZWkhopMEjDenfYsDGxUti3BJVVw==%
 $ cat pleasedonthurtme.txt
-gAAAAABo9_vsBkcYTvBVAh46_xe24bRQtPJLbmbZj2RQhzY6XFW5NtPQZukDfkAkzyH-KDu5rrnAhd1dZjGKjtNM7VR3U_DZs8-FtHKCU2MbjfpTeA59CJel17U577amMDzeiJV5RWF0L4CTXBwR1a8_4TRdTKNReT7DP4nzIc73iprGF9qqjQbPOJJmBVofby7mbYmRJCC9F53KMvd-NM9xFhyfu-q8uA==%</code>
+gAAAAABo-AwgPUfd7gp184nZvENjB9NhHBiXUZkbrUV4FKnBJZbCQg1fDEll2U42eUYLCBE0LOavmW7fnLFB5Rt8btzK5LspBw==%</code>
 </pre>
 
 Fortunately for us hackers, we have a new ``thekey.key`` and that is the key to unlocking these files:
 
 <pre>
 <code>$ cat thekey.key
-uGb51hGWiq-3FEslUhjYNDn2HBWs8JXl-X1RHUqiiSw=%</code>
+SUxaxvZHjB7l5wgJJJFrHyWHr0D3WBA8CdYWYHVnrIc=%</code>
 </pre>
 
 **Step 5:**
