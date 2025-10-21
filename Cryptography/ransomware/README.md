@@ -238,3 +238,59 @@ Now we can unlock all these files once and for all by writing a ``decrypt.py`` f
 <code>$ cp voldemort.py decrypt.py
 $ nano decrypt.py</code>
 </pre>
+
+Add the following code to the ``decrypt.py`` file:
+
+<details>
+<summary>🔑 How to Decrypt the Files:</summary>
+
+```python
+#!/usr/bin/env python3
+import os
+from cryptography.fernet import Fernet
+
+# Let's find some files!
+files = []
+
+for file in os.listdir():
+    if file == "voldemort.py" or file == "thekey.key" or file == "decrypt.py":
+        continue
+    if os.path.isfile(file):
+        files.append(file)
+
+print(files)
+
+with open("thekey.key", "rb") as key:
+    secret_key = key.read()
+
+for file in files:
+    with open(file, "rb") as thefile:
+        contents = thefile.read()
+    contents_decrypted = Fernet(secret_key).decrypt(contents)
+    with open(file, "wb") as thefile:
+        thefile.write(contents_decrypted)
+
+```
+</details>
+
+Run ``decrypt.py`` and you should see the following output:
+
+<pre>
+<code>$ python decrypt.py
+['file2.txt', 'file.txt', 'hey.txt', 'pleasedonthurtme.txt']</code>
+</pre>
+
+Now you can see that all of the files have finally been decrypted!!!
+
+<pre>
+<code>$ cat file.txt
+This is a file
+$ cat file2.txt
+Leave me alone
+$ cat hey.txt
+Another one
+$ cat pleasedonthurtme.txt
+One more time</code>
+</pre>
+
+
