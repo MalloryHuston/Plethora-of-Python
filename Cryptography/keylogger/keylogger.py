@@ -37,7 +37,7 @@ def write_file(keys):
 def on_release(key):
     print(f'{key} released')
     if key == Key.esc:
-        # Stop the listener
+        # Stop listener
         return False
 
 
