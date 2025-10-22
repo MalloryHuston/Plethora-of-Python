@@ -1,4 +1,4 @@
-# All Links from Given Webpage
+# URL Scraper
 
 This script retrieves all links from a given webpage and saves them as a ``.txt`` file.
 
