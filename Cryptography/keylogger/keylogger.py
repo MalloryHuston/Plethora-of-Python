@@ -1,8 +1,5 @@
 #!/usr/bin/env python3
 
-# https://www.geeksforgeeks.org/python/how-to-use-pynput-to-make-a-keylogger/
-# keylogger using pynput module
-
 import pynput
 from pynput.keyboard import Key, Listener
 
