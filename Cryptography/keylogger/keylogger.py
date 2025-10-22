@@ -1,4 +1,5 @@
 #!/usr/bin/env python3
+# keylogger.py – For personal/authorized testing only.
 
 from pynput.keyboard import Key, Listener
 
