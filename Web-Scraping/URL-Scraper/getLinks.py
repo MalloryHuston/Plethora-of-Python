@@ -15,5 +15,5 @@ for link in soup.find_all("a"):
 # You can change 'a' to 'w' to overwrite the file each time
 with open("myLinks.txt", 'a') as saved:
     print(links[:10], file=saved)
-print("A total of {len(links)} links have been found. "
+print(f"A total of {len(links)} links have been found. "
       "Check out myLinks.txt for the radical list! 😎")
