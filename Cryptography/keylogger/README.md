@@ -1,19 +1,15 @@
 # How to Make a Keylogger
 
-``keyboard`` is the *ultimate* Python library for capturing keyboard inputs – one of the coolest uses of this is making keyloggers.
+The package **pynput.keyboard** contains classes for controlling and monitoring the keyboard. ```pynput``` is the *ultimate* Python library for capturing keyboard inputs – one of the coolest uses of this is making keyloggers.
 
 ## Modules Needed
 
 ```bash
-pip install keyboard
+pip install pynput
 ```
 
-(Use ``pip3`` if needed)
-
-## How to Run the Script
-
-Because ``keyboard`` needs access to low-level events, ***you must run with ``sudo``***:
+## Running the Script
 
 ```bash
-sudo python3 keylogger.py
+python keylogger.py
 ```
