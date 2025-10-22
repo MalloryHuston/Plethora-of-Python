@@ -1,6 +1,5 @@
 #!/usr/bin/env python3
 
-import pynput
 from pynput.keyboard import Key, Listener
 
 keys = []
