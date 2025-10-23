@@ -8,7 +8,7 @@ LOGFILE = "log.txt"
 
 
 def write_log(line: str):
-    with open(LOGFILE, "a", encoding="utf-8") as f:
+    with open(LOGFILE, "a+", encoding="utf-8") as f:
         f.write(line + "\n")
 
 
