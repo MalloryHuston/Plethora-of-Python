@@ -1,8 +1,8 @@
-# Backgammon with pygame
+# Backgammon With Pygame
 
 Backgammon with free moving pieces to be played with another player via Internet.
 
-![Backgammon with pygame](example.png "Backgammon with pygame")
+![Backgammon With Pygame](example.png "Backgammon With Pygame")
 
 ## Setup
 
@@ -16,5 +16,5 @@ Backgammon with free moving pieces to be played with another player via Internet
 
 * Pres ESC to start a new game.
 * The server is black, the client white.
-* Press on the diece or press SPACE to roll the diece.
+* Press on the dice or press SPACE to roll the dice.
 * Move the pieces via mouse.
