@@ -4,7 +4,7 @@ The package ``pynput.keyboard`` contains classes for controlling and monitoring 
 
 ## Requirements
 
-Run the following command in your computer's terminal:
+Install the following ``pip`` packages:
 
 ```bash
 pip install pynput
