@@ -31,7 +31,7 @@ pygame.display.set_caption("Flappy Bird")
 
 pipe_img = pygame.transform.scale2x(pygame.image.load(os.path.join("/Users/malpal101/Plethora-of-Python/Pygame/Flappy-Bird/imgs", "pipe.png")).convert_alpha())
 bg_img = pygame.transform.scale(pygame.image.load(os.path.join("/Users/malpal101/Plethora-of-Python/Pygame/Flappy-Bird/imgs", "bg.png")).convert_alpha(), (600, 900))
-bird_images = [pygame.transform.scale2x(pygame.image.load(os.path.join("/Users/malpal101/Plethora-of-Python/Pygame/Flappy-Bird/imgs", "bird" + str(x) + ".png"))) for x in range(1,4)]
+bird_images = [pygame.transform.scale2x(pygame.image.load(os.path.join("/Users/malpal101/Plethora-of-Python/Pygame/Flappy-Bird/imgs", "bird" + str(x) + ".png"))) for x in range(1, 4)]
 base_img = pygame.transform.scale2x(pygame.image.load(os.path.join("/Users/malpal101/Plethora-of-Python/Pygame/Flappy-Bird/imgs", "base.png")).convert_alpha())
 
 
