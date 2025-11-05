@@ -22,6 +22,7 @@ font = pygame.font.SysFont("Arial", 32)
 
 def RedrawGameWindow():
     screen.fill((255, 255, 255))
+    global grid
     global G00
     global G01
     global G02
@@ -285,7 +286,7 @@ while running:
 
         if event.type == pygame.MOUSEBUTTONDOWN:
 
-            if G00.collide_point(pygame.mouse.get_pos()):
+            if G00.collidepoint(pygame.mouse.get_pos()):
                 print("CLICKED!")
                 row = 0
                 col = 0
@@ -309,7 +310,7 @@ while running:
                     pygame.display.flip()
                     checkGridX(grid)
 
-            if G01.collide_point(pygame.mouse.get_pos()):
+            if G01.collidepoint(pygame.mouse.get_pos()):
                 print("CLICKED!")
                 row = 0
                 col = 1
@@ -330,7 +331,7 @@ while running:
                     pygame.display.flip()
                     checkGridX(grid)
 
-            if G02.collide_point(pygame.mouse.get_pos()):
+            if G02.collidepoint(pygame.mouse.get_pos()):
                 print("CLICKED!")
                 row = 0
                 col = 2
@@ -351,7 +352,7 @@ while running:
                     pygame.display.flip()
                     checkGridX(grid)
 
-            if G10.collide_point(pygame.mouse.get_pos()):
+            if G10.collidepoint(pygame.mouse.get_pos()):
                 print("CLICKED!")
                 row = 1
                 col = 0
@@ -372,7 +373,7 @@ while running:
                     pygame.display.flip()
                     checkGridX(grid)
 
-            if G11.collide_point(pygame.mouse.get_pos()):
+            if G11.collidepoint(pygame.mouse.get_pos()):
                 print("CLICKED!")
                 row = 1
                 col = 1
@@ -393,7 +394,7 @@ while running:
                     pygame.display.flip()
                     checkGridX(grid)
 
-            if G12.collide_point(pygame.mouse.get_pos()):
+            if G12.collidepoint(pygame.mouse.get_pos()):
                 print("CLICKED!")
                 row = 1
                 col = 2
@@ -414,7 +415,7 @@ while running:
                     pygame.display.flip()
                     checkGridX(grid)
 
-            if G20.collide_point(pygame.mouse.get_pos()):
+            if G20.collidepoint(pygame.mouse.get_pos()):
                 print("CLICKED!")
                 row = 2
                 col = 0
@@ -435,7 +436,7 @@ while running:
                     pygame.display.flip()
                     checkGridX(grid)
 
-            if G21.collide_point(pygame.mouse.get_pos()):
+            if G21.collidepoint(pygame.mouse.get_pos()):
                 print("CLICKED!")
                 row = 2
                 col = 1
@@ -457,7 +458,7 @@ while running:
                     pygame.display.flip()
                     checkGridX(grid)
 
-            if G22.collide_point(pygame.mouse.get_pos()):
+            if G22.collidepoint(pygame.mouse.get_pos()):
                 print("CLICKED!")
                 row = 2
                 col = 2
