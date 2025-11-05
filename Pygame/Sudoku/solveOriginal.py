@@ -1,5 +1,6 @@
 import pprint
 
+
 # solveOriginal.py
 def solve(bo):
     """
@@ -13,7 +14,7 @@ def solve(bo):
     else:
         return True
 
-    for i in range(1,10):
+    for i in range(1, 10):
         if valid(bo, (row, col), i):
             bo[row][col] = i
 
@@ -51,7 +52,7 @@ def valid(bo, pos, num):
 
     for i in range(box_y*3, box_y*3 + 3):
         for j in range(box_x*3, box_x*3 + 3):
-            if bo[i][j] == num and (i,j) != pos:
+            if bo[i][j] == num and (i, j) != pos:
                 return False
 
     return True
@@ -63,7 +64,7 @@ def find_empty(bo):
     :param bo: partially completed board
     :return: (int, int) row, col
     """
-    
+
     for i in range(len(bo)):
         for j in range(len(bo[0])):
             if bo[i][j] == 0:
@@ -83,7 +84,7 @@ def print_board(bo):
             print("- - - - - - - - - - - - - -")
         for j in range(len(bo[0])):
             if j % 3 == 0:
-                print(" | ",end="")
+                print(" | ", end="")
 
             if j == 8:
                 print(bo[i][j], end="\n")
