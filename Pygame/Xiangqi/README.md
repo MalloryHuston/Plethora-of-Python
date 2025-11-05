@@ -1,13 +1,17 @@
 # Xiangqi-ChineseChess
 
-## pygame-chess
+## Pygame-Chess
+
 Chinese chess game ([Xiangqi](https://en.wikipedia.org/wiki/Xiangqi)) written in python using [pygame](http://www.pygame.org).
 
 ### Built-in GUI
-Requirement: pygame
+
+Requirements: `pygame`
+
 ```bash
 python main.py
 ```
-**Game play**
+
+## Gameplay
 
 ![board](Screenshots/Gameplay.JPG)
