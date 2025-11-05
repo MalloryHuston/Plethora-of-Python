@@ -1,11 +1,13 @@
 """
 The classic game of Flappy Bird. Made with Python
-and Pygame. Features pixel perfect collision using masks.
+and Pygame. Features pixel perfect collision using masks :O
 
-Date Modified:  Aug 19, 2024
+Date Modified:  November 5, 2025
 Author: Mallory Huston
-Estimated Work Time: 5 hours
+Estimated Work Time: 6.5 hours (2 just for that damn collision)
 """
+
+
 import pygame
 import random
 import os
@@ -21,16 +23,17 @@ END_FONT = pygame.font.SysFont("comicsans", 70)
 WIN = pygame.display.set_mode((WIN_WIDTH, WIN_HEIGHT))
 pygame.display.set_caption("Flappy Bird")
 
-##### Macintosh #####
-#"/Users/malpal101/Plethora-of-Python/Pygame/Flappy-Bird/imgs"
+# macOS FILE PATH DIRECTORIES #
+# "/Users/malpal101/Plethora-of-Python/Pygame/Flappy-Bird/imgs"
 
-##### Windows #####
-#"C:\Users\User\Plethora-of-Python\Pygame\Flappy-Bird\imgs"
+# Windows Command Prompt FILE PATH DIRECTORIES #
+# "C:\Users\User\Plethora-of-Python\Pygame\Flappy-Bird\imgs"
 
 pipe_img = pygame.transform.scale2x(pygame.image.load(os.path.join("/Users/malpal101/Plethora-of-Python/Pygame/Flappy-Bird/imgs","pipe.png")).convert_alpha())
 bg_img = pygame.transform.scale(pygame.image.load(os.path.join("/Users/malpal101/Plethora-of-Python/Pygame/Flappy-Bird/imgs","bg.png")).convert_alpha(), (600, 900))
 bird_images = [pygame.transform.scale2x(pygame.image.load(os.path.join("/Users/malpal101/Plethora-of-Python/Pygame/Flappy-Bird/imgs","bird" + str(x) + ".png"))) for x in range(1,4)]
 base_img = pygame.transform.scale2x(pygame.image.load(os.path.join("/Users/malpal101/Plethora-of-Python/Pygame/Flappy-Bird/imgs","base.png")).convert_alpha())
+
 
 class Bird:
     """
@@ -76,8 +79,8 @@ class Bird:
         """
         self.tick_count += 1
 
-        # for downward acceleration
-        displacement = self.vel*(self.tick_count) + 0.5*(3)*(self.tick_count)**2    # calculate displacement
+        # for downward acceleration and to calculate displacement
+        displacement = self.vel*(self.tick_count) + 0.5*(3)*(self.tick_count)**2
 
         # terminal velocity
         if displacement >= 16:
@@ -85,7 +88,7 @@ class Bird:
 
         if displacement < 0:
             displacement -= 2
-        
+
         self.y = self.y + displacement
 
         if displacement < 0 or self.y < self.height + 50:   # tilt up
@@ -115,12 +118,11 @@ class Bird:
         elif self.img_count == self.ANIMATION_TIME*4 + 1:
             self.img = self.IMGS[0]
             self.img_count = 0
-        
+
         # so when bird is nose diving it isn't flapping
         if self.tilt <= -80:
             self.img = self.IMGS[1]
             self.img_count = self.ANIMATION_TIME*2
-
 
         # tilt the bird
         blitRotateCenter(win, self.img, (self.x, self.y), self.tilt)
@@ -191,7 +193,6 @@ class Pipe():
         # draw bottom
         win.blit(self.PIPE_BOTTOM, (self.x, self.bottom))
 
-
     def collide(self, bird, win):
         """
         returns if a point is colliding with the pipe
@@ -205,12 +206,13 @@ class Pipe():
         bottom_offset = (self.x - bird.x, self.bottom - round(bird.y))
 
         b_point = bird_mask.overlap(bottom_mask, bottom_offset)
-        t_point = bird_mask.overlap(top_mask,top_offset)
+        t_point = bird_mask.overlap(top_mask, top_offset)
 
         if b_point or t_point:
             return True
 
         return False
+
 
 class Base:
     """
@@ -264,9 +266,10 @@ def blitRotateCenter(surf, image, topleft, angle):
     :return: None
     """
     rotated_image = pygame.transform.rotate(image, angle)
-    new_rect = rotated_image.get_rect(center = image.get_rect(topleft = topleft).center)
+    new_rect = rotated_image.get_rect(center=image.get_rect(topleft=topleft).center)
 
     surf.blit(rotated_image, new_rect.topleft)
+
 
 def menu_screen(win):
     """
@@ -276,6 +279,7 @@ def menu_screen(win):
     """
     pass
 
+
 def end_screen(win):
     """
     display an end screen when the player loses
@@ -283,7 +287,7 @@ def end_screen(win):
     :return: None
     """
     run = True
-    text_label = END_FONT.render("Press Space to Restart", 1, (255,255,255))
+    text_label = END_FONT.render("Press Space to Restart", 1, (255, 255, 255))
     while run:
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
@@ -298,6 +302,7 @@ def end_screen(win):
     pygame.quit()
     quit()
 
+
 def draw_window(win, bird, pipes, base, score):
     """
     draws the windows for the main game loop
@@ -307,7 +312,7 @@ def draw_window(win, bird, pipes, base, score):
     :param score: score of the game (int)
     :return: None
     """
-    win.blit(bg_img, (0,0))
+    win.blit(bg_img, (0, 0))
 
     for pipe in pipes:
         pipe.draw(win)
@@ -315,8 +320,8 @@ def draw_window(win, bird, pipes, base, score):
     base.draw(win)
     bird.draw(win)
 
-    # score
-    score_label = STAT_FONT.render("Score: " + str(score),1,(255,255,255))
+    # Score!
+    score_label = STAT_FONT.render("Score: " + str(score), 1, (255, 255, 255))
     win.blit(score_label, (WIN_WIDTH - score_label.get_width() - 15, 10))
 
     pygame.display.update()
@@ -328,7 +333,7 @@ def main(win):
     :param win: pygame window surface
     :return: None
     """
-    bird = Bird(230,350)
+    bird = Bird(230, 350)
     base = Base(FLOOR)
     pipes = [Pipe(700)]
     score = 0
@@ -366,6 +371,7 @@ def main(win):
                 add_pipe = False
                 for pipe in pipes:
                     pipe.move()
+
                     # check for collision
                     if pipe.collide(bird, win):
                         lost = True
@@ -384,12 +390,12 @@ def main(win):
                 for r in rem:
                     pipes.remove(r)
 
-
         if bird.y + bird_images[0].get_height() - 10 >= FLOOR:
             break
 
         draw_window(WIN, bird, pipes, base, score)
 
     end_screen(WIN)
+
 
 main(WIN)
