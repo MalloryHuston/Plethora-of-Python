@@ -6,7 +6,7 @@ Chinese Chess game ([Xiangqi](https://en.wikipedia.org/wiki/Xiangqi)) written in
 
 ### Built-in GUI
 
-Requirements: `pygame`
+Requirements: `pip install pygame`
 
 ```bash
 python main.py
