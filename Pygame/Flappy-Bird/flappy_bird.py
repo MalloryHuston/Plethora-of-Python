@@ -23,10 +23,10 @@ END_FONT = pygame.font.SysFont("comicsans", 70)
 WIN = pygame.display.set_mode((WIN_WIDTH, WIN_HEIGHT))
 pygame.display.set_caption("Flappy Bird")
 
-# macOS FILE PATH DIRECTORIES #
+# macOS – FILE PATH DIRECTORIES #
 # "/Users/malpal101/Plethora-of-Python/Pygame/Flappy-Bird/imgs"
 
-# Windows Command Prompt FILE PATH DIRECTORIES #
+# Windows Command Prompt – FILE PATH DIRECTORIES #
 # "C:\Users\User\Plethora-of-Python\Pygame\Flappy-Bird\imgs"
 
 pipe_img = pygame.transform.scale2x(pygame.image.load(os.path.join("/Users/malpal101/Plethora-of-Python/Pygame/Flappy-Bird/imgs", "pipe.png")).convert_alpha())
