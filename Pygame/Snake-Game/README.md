@@ -1,20 +1,24 @@
-# Snake-Game
+# Snake Game
 
 The classic game of Snake madee with Python and Pygame.
 
-You can check out my video tutorial series on how to create this game: https://www.youtube.com/watch?v=5tvER0MT14s&t=2s
+## Requirements
 
-# Requirements
-- Python 3.x
-- pygame
+Install the following ``pip`` packages:
 
-# Run in Gitpod
+```bash
+pip install pygame
+```
 
-You can also run Snake-Game in Gitpod, a free online dev environment for GitHub:
+## Instructions
 
-If you're intersted in a paid subscription with GitPod use the coupon code: **TECHWITHTIM19**
+Run the following command in your computer's terminal:
 
-[![Open in Gitpod](https://gitpod.io/button/open-in-gitpod.svg)](https://gitpod.io/#https://github.com/techwithtim/Snake-Game/blob/master/snake.py)
+```bash
+python snake.py
+```
 
-## Citations
-Ruscica, Tim. (July 2024) Flappy Bird (last updated December 2019)[Source Code]. https://github.com/techwithtim/Snake-Game
+## Code Citations
+
+<br>`Ruscica, Tim`. `(July 27, 2024)`. `"Snake Game"` (Version `1.0`), <ins>[`Source code`]</ins>.</br>
+<b>https://github.com/techwithtim/Snake-Game</b>.</br>
