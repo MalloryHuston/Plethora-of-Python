@@ -14,7 +14,7 @@ if __name__ == "__main__":
     mouse_pos = None
 
     while True:
-        pygame.time.delay(50)  # stops cpu dying
+        pygame.time.delay(50)  # Stops CPU from dying
         WIDTH = gameUI.width
         HEIGHT = WIDTH // 9 * 10
 
@@ -56,3 +56,4 @@ if __name__ == "__main__":
         gameState = board.get_game_state()
         gameState.append(mouse_pos)
         gameUI.update_display(gameState, board)
+
