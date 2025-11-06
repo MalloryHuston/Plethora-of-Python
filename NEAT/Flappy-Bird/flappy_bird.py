@@ -112,7 +112,7 @@ class Bird:
         if displacement < 0:
             displacement -= 2
 
-        self.y = self.y + displacement
+        self.y += displacement
 
         if displacement < 0 or self.y < self.height + 50:  # Tilt up
             if self.tilt < self.MAX_ROTATION:
