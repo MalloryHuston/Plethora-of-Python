@@ -2,7 +2,7 @@
 
 ## Pygame-Chess
 
-Chinese Chess game ([Xiangqi](https://en.wikipedia.org/wiki/Xiangqi)) written in Python using [Pygame](http://www.pygame.org).
+Chinese chess game ([Xiangqi](https://en.wikipedia.org/wiki/Xiangqi)) written in Python using [Pygame](http://www.pygame.org).
 
 ### Built-in GUI
 
