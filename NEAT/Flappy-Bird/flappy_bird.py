@@ -324,26 +324,29 @@ def draw_window(win, birds, pipes, base, score, gen, pipe_ind):
                         bird.y + bird.img.get_height() / 2,
                     ),
                     (
-                        pipes[pipe_ind].x + pipes[pipe_ind].PIPE_TOP.get_width() / 2,
+                        pipes[pipe_ind].x
+                        + pipes[pipe_ind].PIPE_TOP.get_width() / 2,
                         pipes[pipe_ind].height,
                     ),
                     5,
                 )
                 pygame.draw.line(
                     win,
-                    (255, 0, 0),
-                    (
+                    (255, 0, 0),                    (
                         bird.x + bird.img.get_width() / 2,
                         bird.y + bird.img.get_height() / 2,
                     ),
                     (
-                        pipes[pipe_ind].x + pipes[pipe_ind].PIPE_BOTTOM.get_width() / 2,
+                        pipes[pipe_ind].x
+                        + pipes[pipe_ind].PIPE_BOTTOM.get_width() / 2,
                         pipes[pipe_ind].bottom,
                     ),
                     5,
                 )
-            except:
-                pass
+            except Exception as e:
+                print(f"An unexpected error occurred: {e}")
+                # Optionally, log the error for debugging purposes
+
         # Draw bird
         bird.draw(win)
 
@@ -356,7 +359,8 @@ def draw_window(win, birds, pipes, base, score, gen, pipe_ind):
     win.blit(score_label, (10, 10))
 
     # Alive
-    score_label = STAT_FONT.render("Alive: " + str(len(birds)), 1, (255, 255, 255))
+    score_label = STAT_FONT.render("Alive: " +
+                                   str(len(birds)), 1, (255, 255, 255))
     win.blit(score_label, (10, 50))
 
     pygame.display.update()
