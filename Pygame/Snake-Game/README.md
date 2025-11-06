@@ -20,5 +20,5 @@ python snake.py
 
 ## Code Citations
 
-<br>`Ruscica, Tim`. `(July 27, 2024)`. `"Snake Game"` (Version `1.0`), <ins>[`Source code`]</ins>.</br>
+`Ruscica, Tim`. `(July 27, 2024)`. `"Snake Game"` (Version `1.0`), <ins>[`Source code`]</ins>.</br>
 <b>https://github.com/techwithtim/Snake-Game</b>.</br>
