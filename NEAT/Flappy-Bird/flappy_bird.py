@@ -36,6 +36,7 @@ base_img = pygame.transform.scale2x(pygame.image.load(os.path.join("/Users/malpa
 
 gen = 0
 
+
 class Bird:
     """
     Bird class representing the flappy bird
@@ -210,6 +211,7 @@ class Pipe():
 
         return False
 
+
 class Base:
     """
     Represnts the moving floor of the game
@@ -250,7 +252,6 @@ class Base:
         win.blit(self.IMG, (self.x1, self.y))
         win.blit(self.IMG, (self.x2, self.y))
 
-
 def blitRotateCenter(surf, image, topleft, angle):
     """
     Rotate a surface and blit it to the window
@@ -285,25 +286,25 @@ def draw_window(win, birds, pipes, base, score, gen, pipe_ind):
 
     base.draw(win)
     for bird in birds:
-        # draw lines from bird to pipe
+        # Draw lines from bird to pipe
         if DRAW_LINES:
             try:
                 pygame.draw.line(win, (255,0,0), (bird.x+bird.img.get_width()/2, bird.y + bird.img.get_height()/2), (pipes[pipe_ind].x + pipes[pipe_ind].PIPE_TOP.get_width()/2, pipes[pipe_ind].height), 5)
                 pygame.draw.line(win, (255,0,0), (bird.x+bird.img.get_width()/2, bird.y + bird.img.get_height()/2), (pipes[pipe_ind].x + pipes[pipe_ind].PIPE_BOTTOM.get_width()/2, pipes[pipe_ind].bottom), 5)
             except:
                 pass
-        # draw bird
+        # Draw bird
         bird.draw(win)
 
-    # score
+    # SCORE!!!!!!!
     score_label = STAT_FONT.render("Score: " + str(score),1,(255,255,255))
     win.blit(score_label, (WIN_WIDTH - score_label.get_width() - 15, 10))
 
-    # generations
+    # Gnerations
     score_label = STAT_FONT.render("Gens: " + str(gen-1),1,(255,255,255))
     win.blit(score_label, (10, 10))
 
-    # alive
+    # Alive
     score_label = STAT_FONT.render("Alive: " + str(len(birds)),1,(255,255,255))
     win.blit(score_label, (10, 50))
 
@@ -404,7 +405,7 @@ def eval_genomes(genomes, config):
 
         draw_window(WIN, birds, pipes, base, score, gen, pipe_ind)
 
-        # break if score gets large enough
+        # Game will crash if the score gets high enough
         '''if score > 20:
             pickle.dump(nets[0],open("best.pickle", "wb"))
             break'''
