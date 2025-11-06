@@ -58,6 +58,8 @@ base_img = pygame.transform.scale2x(
     pygame.image.load(base_path).convert_alpha()
 )
 
+gen = 0
+
 
 class Bird:
     """
