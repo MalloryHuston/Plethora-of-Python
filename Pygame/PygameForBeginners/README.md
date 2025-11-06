@@ -1,2 +1,2 @@
-# PygameForBeginners
-A simple 2D python game designed to teach you the pygame module.
+# Pygame for Beginners
+A simple 2D Python game designed to teach you the Pygame module.
