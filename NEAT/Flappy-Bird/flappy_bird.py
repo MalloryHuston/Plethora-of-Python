@@ -1,20 +1,22 @@
 """
-The classic game of Flappy Bird. Made with Python
-and Pygame. Features pixel perfect collision using masks.
+The classic game of Flappy Bird. Made with Python, Pygame,
+and NEAT. Features pixel perfect collision using masks :O
 
-Date Modified:  Aug 19, 2024
+Date Modified: November 5, 2025
 Author: Mallory Huston
-Estimated Work Time: 5 hours
+Estimated Work Time: 7.5 hours (1.5 just for that damn collision)
 """
+
 import pygame
 import random
 import os
-import time
 import neat
-import visualize
-import pickle
-pygame.font.init()  # init font
 
+# Initialize pygame and font
+pygame.init()
+pygame.font.init()
+
+# Global constants
 WIN_WIDTH = 600
 WIN_HEIGHT = 800
 FLOOR = 730
@@ -22,9 +24,11 @@ STAT_FONT = pygame.font.SysFont("comicsans", 50)
 END_FONT = pygame.font.SysFont("comicsans", 70)
 DRAW_LINES = False
 
+# Set up window
 WIN = pygame.display.set_mode((WIN_WIDTH, WIN_HEIGHT))
 pygame.display.set_caption("Flappy Bird")
 
+# Load images
 pipe_img = pygame.transform.scale2x(pygame.image.load(os.path.join("/Users/malpal101/Plethora-of-Python/NEAT/Flappy-Bird/imgs","pipe.png")).convert_alpha())
 bg_img = pygame.transform.scale(pygame.image.load(os.path.join("/Users/malpal101/Plethora-of-Python/NEAT/Flappy-Bird/imgs","bg.png")).convert_alpha(), (600, 900))
 bird_images = [pygame.transform.scale2x(pygame.image.load(os.path.join("/Users/malpal101/Plethora-of-Python/NEAT/Flappy-Bird/imgs","bird" + str(x) + ".png"))) for x in range(1,4)]
