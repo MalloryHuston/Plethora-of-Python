@@ -20,7 +20,7 @@ if __name__ == "__main__":
 
         if board.is_inCheck(board.current_turn) and board.isCheckMated():
             print(
-                "Checkmate!!! Red wins!" if board.current_turn == "b" else "Black wins!"
+                "Checkmate! Red wins!" if board.current_turn == "b" else "Black wins!"
             )
             pygame.quit()
             sys.exit()
@@ -56,4 +56,5 @@ if __name__ == "__main__":
         gameState = board.get_game_state()
         gameState.append(mouse_pos)
         gameUI.update_display(gameState, board)
+
 
