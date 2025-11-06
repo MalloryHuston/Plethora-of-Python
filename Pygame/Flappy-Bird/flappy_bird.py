@@ -76,7 +76,7 @@ class Bird:
         """
         self.x = x
         self.y = y
-        self.tilt = 0   # degrees to tilt
+        self.tilt = 0   # Degrees to tilt
         self.tick_count = 0
         self.vel = 0
         self.height = self.y
@@ -112,9 +112,9 @@ class Bird:
 
         self.y += displacement
 
-        if displacement < 0 or self.y < self.height + 50:   # tilt up
+        if displacement < 0 or self.y < self.height + 50:   # Tilt up
             self.tilt = min(self.tilt + self.ROT_VEL, self.MAX_ROTATION)
-        else:   # tilt down
+        else:   # Tilt down
             self.tilt = max(self.tilt - self.ROT_VEL, -90)
 
     def draw(self, win):
@@ -143,7 +143,7 @@ class Bird:
             self.img = self.IMGS[1]
             self.img_count = self.ANIMATION_TIME * 2
 
-        # tilt the bird
+        # Tilt the bird
         blit_rotate_center(win, self.img, (self.x, self.y), self.tilt)
 
     def get_mask(self):
@@ -204,9 +204,9 @@ class Pipe:
         :param win: pygame window or surface
         :return: None
         """
-        # draw top
+        # Draw the top
         win.blit(self.PIPE_TOP, (self.x, self.top))
-        # draw bottom
+        # Draw the bottom
         win.blit(self.PIPE_BOTTOM, (self.x, self.bottom))
 
     def collide(self, bird):
@@ -261,7 +261,7 @@ class Base:
 
     def draw(self, win):
         """
-        Draw the base floor. These are two images that move together.
+        Draw the base floor. There are two images that move together.
         :param win: pygame window or surface
         :return: None
         """
@@ -303,7 +303,7 @@ def draw_window(win, bird, pipes, base, score):
     base.draw(win)
     bird.draw(win)
 
-    # SCORE!
+    # ¡¡¡SCORE!!!
     score_label = STAT_FONT.render("Score: " + str(score), 1, (255, 255, 255))
     win.blit(score_label, (WIN_WIDTH - score_label.get_width() - 15, 10))
 
