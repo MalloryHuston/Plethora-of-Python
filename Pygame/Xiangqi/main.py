@@ -19,9 +19,11 @@ if __name__ == "__main__":
         HEIGHT = WIDTH // 9 * 10
 
         if board.is_inCheck(board.current_turn) and board.isCheckMated():
-            print(
-                "Checkmate! Red wins!" if board.current_turn == "b" else "Black wins!"
+            winner = (
+                "Checkmate! Red wins!" if board.current_turn == "b"
+                else "Checkmate! Black wins!"
             )
+            print(winner)
             pygame.quit()
             sys.exit()
 
@@ -56,5 +58,6 @@ if __name__ == "__main__":
         gameState = board.get_game_state()
         gameState.append(mouse_pos)
         gameUI.update_display(gameState, board)
+
 
 
