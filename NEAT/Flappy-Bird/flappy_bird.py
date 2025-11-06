@@ -216,7 +216,7 @@ class Pipe:
 
     def collide(self, bird, win):
         """
-        Return if the bird is colliding with a pipe
+        Returns if the bird collides with a pipe
         :param bird: Bird object
         :return: Bool
         """
