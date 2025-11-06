@@ -1,10 +1,10 @@
 """
-The classic game of Flappy Bird. Made with Python
-and Pygame. Features pixel perfect collision using masks :O
+The classic game of Flappy Bird. Made with Python and Pygame.
+Features pixel perfect collision using masks :O
 
 Date Modified:  November 5, 2025
 Author: Mallory Huston
-Estimated Work Time: 6.5 hours (2 just for that damn collision)
+Estimated Work Time: 7.5 hours (1.5 just for that damn collision)
 """
 
 import pygame
