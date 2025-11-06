@@ -211,7 +211,7 @@ class Pipe:
 
     def collide(self, bird):
         """
-        Return if a bird collides with the pipe
+        Return if the bird is colliding with a pipe
         :param bird: Bird object
         :return: Bool
         """
@@ -230,7 +230,7 @@ class Pipe:
 
 class Base:
     """
-    Represents teh moving floor of the game
+    Represents the moving floor of the game
     """
     VEL = PIPE_VEL
     WIDTH = base_img.get_width()
@@ -261,7 +261,7 @@ class Base:
 
     def draw(self, win):
         """
-        Draw the base floor. There are two images that move together.
+        Draw the base floor. These are two images that move together.
         :param win: pygame window or surface
         :return: None
         """
