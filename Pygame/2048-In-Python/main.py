@@ -52,7 +52,8 @@ class Tile:
 
     def draw(self, window):
         color = self.get_color()
-        pygame.draw.rect(window, color, (self.x, self.y, RECT_WIDTH, RECT_HEIGHT))
+        pygame.draw.rect(window, color, (self.x, self.y,
+                                         RECT_WIDTH, RECT_HEIGHT))
 
         text = FONT.render(str(self.value), 1, FONT_COLOR)
         window.blit(
@@ -79,13 +80,16 @@ class Tile:
 def draw_grid(window):
     for row in range(1, ROWS):
         y = row * RECT_HEIGHT
-        pygame.draw.line(window, OUTLINE_COLOR, (0, y), (WIDTH, y), OUTLINE_THICKNESS)
+        pygame.draw.line(window, OUTLINE_COLOR, (0, y), (WIDTH, y),
+                         OUTLINE_THICKNESS)
 
     for col in range(1, COLS):
         x = col * RECT_WIDTH
-        pygame.draw.line(window, OUTLINE_COLOR, (x, 0), (x, HEIGHT), OUTLINE_THICKNESS)
+        pygame.draw.line(window, OUTLINE_COLOR, (x, 0), (x, HEIGHT),
+                         OUTLINE_THICKNESS)
 
-    pygame.draw.rect(window, OUTLINE_COLOR, (0, 0, WIDTH, HEIGHT), OUTLINE_THICKNESS)
+    pygame.draw.rect(window, OUTLINE_COLOR, (0, 0, WIDTH, HEIGHT),
+                     OUTLINE_THICKNESS)
 
 
 def draw(window, tiles):
