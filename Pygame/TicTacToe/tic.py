@@ -9,7 +9,7 @@ screen_height = 600
 screen = pygame.display.set_mode((screen_width, screen_height))
 screen.fill((255, 255, 255))
 
-# Load The images
+# Load the images
 imp = pygame.image.load("Cross.png")
 imp = pygame.transform.scale(imp, (100, 100))
 imp2 = pygame.image.load("Nought.png")
