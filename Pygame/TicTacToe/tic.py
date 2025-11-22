@@ -65,7 +65,7 @@ def displayGrid(grid):
 def checkGridX(grid):
     global RowMsg
 
-    # Checks The Rows
+    # Checks the rows
     if grid[0][0] == "X" and grid[0][1] == "X" and grid[0][2] == "X":
         RowMsg = "Three Xs in a row."
         text2 = font.render(RowMsg, True, (0, 0, 0))
