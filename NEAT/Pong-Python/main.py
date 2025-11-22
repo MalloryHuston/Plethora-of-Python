@@ -29,8 +29,13 @@ class PongGame:
                     run = False
                     break
 
-            output = net.activate((self.right_paddle.y, abs(
-                self.right_paddle.x - self.ball.x), self.ball.y))
+            output = net.activate(
+                (
+                    self.right_paddle.y,
+                    abs(self.right_paddle.x - self.ball.x),
+                    self.ball.y,
+                )
+            )
             decision = output.index(max(output))
 
             if decision == 1:  # AI moves up
@@ -49,8 +54,9 @@ class PongGame:
 
     def train_ai(self, genome1, genome2, config, draw=False):
         """
-        Train the AI by passing two NEAT neural networks and the NEAt config object.
-        These AI's will play against eachother to determine their fitness.
+        Train the AI by passing two NEAT neural networks
+        and the NEAT config object.
+        These AI's will play against each other to determine their fitness.
         """
         run = True
         start_time = time.time()
@@ -77,7 +83,11 @@ class PongGame:
             pygame.display.update()
 
             duration = time.time() - start_time
-            if game_info.left_score == 1 or game_info.right_score == 1 or game_info.left_hits >= max_hits:
+            if (
+                game_info.left_score == 1
+                or game_info.right_score == 1
+                or game_info.left_hits >= max_hits
+            ):
                 self.calculate_fitness(game_info, duration)
                 break
 
@@ -85,13 +95,18 @@ class PongGame:
 
     def move_ai_paddles(self, net1, net2):
         """
-        Determine where to move the left and the right paddle based on the two 
-        neural networks that control them. 
+        Determine where to move the left and the right paddle based on the two
+        neural networks that control them.
         """
-        players = [(self.genome1, net1, self.left_paddle, True), (self.genome2, net2, self.right_paddle, False)]
-        for (genome, net, paddle, left) in players:
+        players = [
+            (self.genome1, net1, self.left_paddle, True),
+            (self.genome2, net2, self.right_paddle, False),
+        ]
+
+        for genome, net, paddle, left in players:
             output = net.activate(
-                (paddle.y, abs(paddle.x - self.ball.x), self.ball.y))
+                (paddle.y, abs(paddle.x - self.ball.x), self.ball.y)
+            )
             decision = output.index(max(output))
 
             valid = True
@@ -102,7 +117,9 @@ class PongGame:
             else:  # Move down
                 valid = self.game.move_paddle(left=left, up=False)
 
-            if not valid:  # If the movement makes the paddle go off the screen punish the AI
+            # If the movement makes the paddle go off,
+            # the screen will punish the AI
+            if not valid:
                 genome.fitness -= 1
 
     def calculate_fitness(self, game_info, duration):
@@ -112,17 +129,17 @@ class PongGame:
 
 def eval_genomes(genomes, config):
     """
-    Run each genome against eachother one time to determine the fitness.
+    Run each genome against each other one time to determine the fitness.
     """
     width, height = 700, 500
     win = pygame.display.set_mode((width, height))
     pygame.display.set_caption("Pong")
 
     for i, (genome_id1, genome1) in enumerate(genomes):
-        print(round(i/len(genomes) * 100), end=" ")
+        print(round(i / len(genomes) * 100), end=" ")
         genome1.fitness = 0
-        for genome_id2, genome2 in genomes[min(i+1, len(genomes) - 1):]:
-            genome2.fitness = 0 if genome2.fitness == None else genome2.fitness
+        for genome_id2, genome2 in genomes[min(i + 1, len(genomes) - 1):]:
+            genome2.fitness = 0 if genome2.fitness is None else genome2.fitness
             pong = PongGame(win, width, height)
 
             force_quit = pong.train_ai(genome1, genome2, config, draw=True)
@@ -131,7 +148,7 @@ def eval_genomes(genomes, config):
 
 
 def run_neat(config):
-    #p = neat.Checkpointer.restore_checkpoint('neat-checkpoint-85')
+    # p = neat.Checkpointer.restore_checkpoint('neat-checkpoint-85')
     p = neat.Population(config)
     p.add_reporter(neat.StdOutReporter(True))
     stats = neat.StatisticsReporter()
@@ -155,13 +172,17 @@ def test_best_network(config):
     pong.test_ai(winner_net)
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     local_dir = os.path.dirname(__file__)
-    config_path = os.path.join(local_dir, 'config.txt')
+    config_path = os.path.join(local_dir, "config.txt")
 
-    config = neat.Config(neat.DefaultGenome, neat.DefaultReproduction,
-                         neat.DefaultSpeciesSet, neat.DefaultStagnation,
-                         config_path)
+    config = neat.Config(
+        neat.DefaultGenome,
+        neat.DefaultReproduction,
+        neat.DefaultSpeciesSet,
+        neat.DefaultStagnation,
+        config_path,
+    )
 
     run_neat(config)
     test_best_network(config)
