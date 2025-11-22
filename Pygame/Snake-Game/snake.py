@@ -34,14 +34,26 @@ class Cube:
     def draw(self, surface, eyes=False):
         i, j = self.pos
         pygame.draw.rect(
-            surface, self.color,
-            (i * CELL_SIZE + 1, j * CELL_SIZE + 1, CELL_SIZE - 2, CELL_SIZE - 2)
+            surface,
+            self.color,
+            (
+                i * CELL_SIZE + 1,
+                j * CELL_SIZE + 1,
+                CELL_SIZE - 2,
+                CELL_SIZE - 2,
+            ),
         )
         if eyes:
             centre = CELL_SIZE // 2
             radius = 3
-            circleMiddle1 = (i * CELL_SIZE + centre - radius, j * CELL_SIZE + 8)
-            circleMiddle2 = (i * CELL_SIZE + CELL_SIZE - radius * 2, j * CELL_SIZE + 8)
+            circleMiddle1 = (
+                i * CELL_SIZE + centre - radius,
+                j * CELL_SIZE + 8,
+            )
+            circleMiddle2 = (
+                i * CELL_SIZE + CELL_SIZE - radius * 2,
+                j * CELL_SIZE + 8,
+            )
             pygame.draw.circle(surface, (0, 0, 0), circleMiddle1, radius)
             pygame.draw.circle(surface, (0, 0, 0), circleMiddle2, radius)
 
@@ -116,8 +128,18 @@ class Snake:
 
 def draw_grid(surface):
     for i in range(ROWS):
-        pygame.draw.line(surface, (255, 255, 255), (0, i * CELL_SIZE), (WIDTH, i * CELL_SIZE))
-        pygame.draw.line(surface, (255, 255, 255), (i * CELL_SIZE, 0), (i * CELL_SIZE, HEIGHT))
+        pygame.draw.line(
+            surface,
+            (255, 255, 255),
+            (0, i * CELL_SIZE),
+            (WIDTH, i * CELL_SIZE),
+        )
+        pygame.draw.line(
+            surface,
+            (255, 255, 255),
+            (i * CELL_SIZE, 0),
+            (i * CELL_SIZE, HEIGHT),
+        )
 
 
 def redraw_window(surface, snake, snack):
@@ -161,7 +183,12 @@ def main():
             head_pos = s.head.pos
 
             # Collision with walls
-            if head_pos[0] >= ROWS or head_pos[0] < 0 or head_pos[1] >= ROWS or head_pos[1] < 0:
+            if (
+                head_pos[0] >= ROWS
+                or head_pos[0] < 0
+                or head_pos[1] >= ROWS
+                or head_pos[1] < 0
+            ):
                 print("Game Over! Score:", len(s.body))
                 s.reset((10, 10))
                 snack = random_snack(s)
