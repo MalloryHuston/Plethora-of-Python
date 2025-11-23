@@ -4,7 +4,7 @@ Using the NEAT algorithm to train an AI to play Pong in Python!
 
 ## Instructions
 
-Simply run ```main.py``` and watch an AI start training itself to play the game of Pong!
+Simply run ```python main.py``` and watch an AI start training itself to play the game of Pong!
 
 Make sure to run ```pip install -r requirements.txt``` first!
 
