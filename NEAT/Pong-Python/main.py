@@ -56,7 +56,7 @@ class PongGame:
         """
         Train the AI by passing two NEAT neural networks
         and the NEAT config object.
-        These AI's will play against each other to determine their fitness.
+        These AIs will play against each other to determine their fitness.
         """
         run = True
         start_time = time.time()
@@ -95,8 +95,8 @@ class PongGame:
 
     def move_ai_paddles(self, net1, net2):
         """
-        Determine where to move the left and the right paddle based on the two
-        neural networks that control them.
+        Determine where to move the left paddle and the right paddle
+        based on the two neural networks that control them.
         """
         players = [
             (self.genome1, net1, self.left_paddle, True),
@@ -111,14 +111,14 @@ class PongGame:
 
             valid = True
             if decision == 0:  # Don't move
-                genome.fitness -= 0.01  # we want to discourage this
+                genome.fitness -= 0.01  # We want to discourage this
             elif decision == 1:  # Move up
                 valid = self.game.move_paddle(left=left, up=True)
             else:  # Move down
                 valid = self.game.move_paddle(left=left, up=False)
 
             # If the movement makes the paddle go off,
-            # the screen will punish the AI
+            # then the screen will punish the AI
             if not valid:
                 genome.fitness -= 1
 
