@@ -1,6 +1,6 @@
 """
 The classic game of Flappy Bird. Made with Python and Pygame.
-Features pixel perfect collision using masks :O
+Features pixel perfect collisions using masks :O
 
 Date Modified:  November 22, 2025
 Author: Mallory Huston
@@ -358,7 +358,7 @@ def main(win):
             rem = []
             for pipe in pipes:
                 pipe.move()
-                # Check for collision
+                # Check for collisions
                 if pipe.collide(bird):
                     end_screen(win)
 
