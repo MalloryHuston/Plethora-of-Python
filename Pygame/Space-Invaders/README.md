@@ -67,8 +67,8 @@ project-root/
     │
     └── sounds/
         └── explosion.wav
-        └── game_over.wav
-        └── game_start.wav
+        └── game-over.wav
+        └── game-start.wav
         └── laser.wav
         └── victory.wav
 ```
