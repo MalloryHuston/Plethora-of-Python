@@ -172,7 +172,7 @@ class Pipe:
         self.x = x
         self.height = 0
 
-        # Where the top and the bottom of the pipe is
+        # Where the top and the bottom of the pipe are located
         self.top = 0
         self.bottom = 0
 
