@@ -11,7 +11,7 @@ IMG_DIR = "/Users/malpal101/Plethora-of-Python/Pygame/Space-Invaders/assets"
 
 # Enemy ships
 RED_SPACE_SHIP = pygame.image.load(os.path.join(IMG_DIR, "pixel_ship_red_small.png"))
-GREEN__SPACE_SHIP = pygame.image.load(os.path.join(IMG_DIR, "pixel_ship_green_small.png"))
+GREEN_SPACE_SHIP = pygame.image.load(os.path.join(IMG_DIR, "pixel_ship_green_small.png"))
 BLUE_SPACE_SHIP = pygame.image.load(os.path.join(IMG_DIR, "pixel_ship_blue_small.png"))
 
 # Player ship
