@@ -229,7 +229,7 @@ def main():
         player.draw(WIN)
 
         if lost:
-            lost_label = lost_font.render("You Lose!!!", 1, (255, 255, 255))
+            lost_label = lost_font.render("YOU DIED!!!", 1, (255, 255, 255))
             WIN.blit(lost_label, (WIDTH / 2 - lost_label.get_width() / 2, 350))
 
         pygame.display.update()
