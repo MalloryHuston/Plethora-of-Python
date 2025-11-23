@@ -62,17 +62,18 @@ project-root/
         ├── pixel_laser_blue.png
         └── pixel_laser_yellow.png
 ```
+
 ---
 
 ## 🔧 Getting Started
 
-### 1. Install Pygame:
+### 1. Install Pygame
 
 ```bash
 pip install pygame
 ```
 
-### 2. Run the Game:
+### 2. Run the Game
 
 ```bash
 python main.py
@@ -82,8 +83,8 @@ python main.py
 
 ## 🛠️ In Progress
 
-* 🎵 Sound effects and background music
-* 💥 Power-ups and more alien types
-* 🧮 Score tracking + high score saving
-* ⬆️ Level progression with difficulty scaling
-* 📱 Touchscreen or mobile-friendly controls
+- 🎵 Sound effects and background music
+- 💥 Power-ups and more alien types
+- 🧮 Score tracking + high score saving
+- ⬆️ Level progression with difficulty scaling
+- 📱 Touchscreen or mobile-friendly controls
