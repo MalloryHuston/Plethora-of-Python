@@ -20,7 +20,9 @@ A modern recreation of the classic **Space Invaders** arcade game, built using *
 ## 🖥️ Resolution & Fonts
 
 - Default resolution: **750 × 750**
-- Fonts: **[Press Start 2P](https://fonts.google.com/specimen/Press+Start+2P)** (retro 8-bit style)
+- Fonts:
+  - **[Press Start 2P](https://fonts.google.com/specimen/Press+Start+2P)** (retro 8-bit style)
+  - **[Pixelify Sans](https://fonts.google.com/specimen/Pixelify+Sans)**
 - Fonts scale proportionally to screen width for UI consistency
 
 ---
@@ -45,11 +47,12 @@ project-root/
 │
 ├── main.py
 ├── README.md
-├── requirements.txt          # Optional if you want to include dependencies
 │
 └── assets/
-    ├── font/
-    │   └── PressStart2P-Regular.ttf
+    ├── fonts/
+    │   └── list_fonts.py          # Utility script to preview and list all available system fonts
+    │   └── PixelifySans.ttf
+    │   └── PressStart2P.ttf
     │
     ├── imgs/
     │   └── background-black.png
@@ -62,6 +65,7 @@ project-root/
     │
     └── sounds/
         └── badass_victory.wav
+        └── explosion.wav
         └── game_over.wav
         └── game_start.wav
         └── projectile_lasers.wav
