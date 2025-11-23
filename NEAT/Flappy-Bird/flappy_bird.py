@@ -125,7 +125,7 @@ class Bird:
         """
         self.img_count += 1
 
-        # For animation of bird, loop through three images
+        # For the animation of bird, loop through three images
         if self.img_count <= self.ANIMATION_TIME:
             self.img = self.IMGS[0]
         elif self.img_count <= self.ANIMATION_TIME * 2:
@@ -138,7 +138,7 @@ class Bird:
             self.img = self.IMGS[0]
             self.img_count = 0
 
-        # So when the bird is nose diving, it isn't flapping
+        # So when the bird is nosediving, it isn't flapping
         if self.tilt <= -80:
             self.img = self.IMGS[1]
             self.img_count = self.ANIMATION_TIME * 2
