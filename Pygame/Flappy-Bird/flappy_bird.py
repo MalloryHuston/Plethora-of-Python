@@ -358,7 +358,7 @@ def main(win):
             rem = []
             for pipe in pipes:
                 pipe.move()
-                # Check for collisions
+                # Check for collision
                 if pipe.collide(bird):
                     end_screen(win)
 
