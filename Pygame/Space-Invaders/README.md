@@ -43,7 +43,7 @@ A modern recreation of the classic **Space Invaders** arcade game, built using *
 ## 🧱 Folder Structure
 
 ```bash
-project-root/
+Space-Invaders/
 │
 ├── main.py
 ├── README.md
