@@ -34,7 +34,7 @@ YELLOW_SPACE_SHIP = pygame.image.load(
     os.path.join(IMG_DIR, "pixel_ship_yellow.png")
 )
 
-# Lasers
+# Laser
 RED_LASER = pygame.image.load(os.path.join(IMG_DIR, "pixel_laser_red.png"))
 GREEN_LASER = pygame.image.load(os.path.join(IMG_DIR, "pixel_laser_green.png"))
 BLUE_LASER = pygame.image.load(os.path.join(IMG_DIR, "pixel_laser_blue.png"))
@@ -290,7 +290,7 @@ def main():
             enemy.move(enemy_vel)
             enemy.move_lasers(laser_vel, player)
 
-            if random.randrange(0, 2*60) == 1:
+            if random.randrange(0, 2 * 60) == 1:
                 enemy.shoot()
 
             if collide(enemy, player):
