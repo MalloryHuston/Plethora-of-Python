@@ -197,8 +197,8 @@ def main():
     FPS = 60
     level = 0
     lives = 3
-    main_font = pygame.font.Font("assets/font/PressStart2P-Regular.ttf", 24)
-    lost_font = pygame.font.Font("assets/font/PressStart2P-Regular.ttf", 36)
+    main_font = pygame.font.Font("assets/font/PressStart2P.ttf", 24)
+    lost_font = pygame.font.Font("assets/font/PressStart2P.ttf", 36)
     # main_font = pygame.font.SysFont("impact", 50)
     # lost_font = pygame.font.SysFont("impact", 60)
 
@@ -308,7 +308,7 @@ def main():
 
 def main_menu():
     # title_font = pygame.font.SysFont("impact", 57)
-    title_font = pygame.font.Font("assets/font/PressStart2P-Regular.ttf", 28)
+    title_font = pygame.font.Font("assets/font/PressStart2P.ttf", 28)
     run = True
 
     while run:
