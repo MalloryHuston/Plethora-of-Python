@@ -60,7 +60,7 @@ project-root/
     │   └── pixel_laser_blue.png
     │   └── pixel_laser_yellow.png
     │
-    ├── sounds/
+    └── sounds/
         └── badass_victory.wav
         └── game_over.wav
         └── game_start.wav
