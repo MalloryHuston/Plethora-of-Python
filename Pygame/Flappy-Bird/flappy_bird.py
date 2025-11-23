@@ -2,7 +2,7 @@
 The classic game of Flappy Bird. Made with Python and Pygame.
 Features pixel perfect collision using masks :O
 
-Date Modified:  November 5, 2025
+Date Modified:  November 22, 2025
 Author: Mallory Huston
 Estimated Work Time: 7.5 hours (1.5 just for that damn collision)
 """
@@ -11,7 +11,7 @@ import pygame
 import random
 import os
 
-# Initialize pygame and font
+# Initialize Pygame and font
 pygame.init()
 pygame.font.init()
 
@@ -27,32 +27,26 @@ END_FONT = pygame.font.SysFont("comicsans", 70)
 WIN = pygame.display.set_mode((WIN_WIDTH, WIN_HEIGHT))
 pygame.display.set_caption("Flappy Bird")
 
-# Load images (macOS)
-IMG_DIR = "/Users/malpal101/Plethora-of-Python/Pygame/Flappy-Bird/imgs"
-
-# Load images (Windows)
-# IMG_DIR = "C:/Users/User/Plethora-of-Python/Pygame/Flappy-Bird/imgs"
-
 # Load and scale pipe image
-pipe_path = os.path.join(IMG_DIR, "pipe.png")
+pipe_path = os.path.join("imgs", "pipe.png")
 pipe_img = pygame.transform.scale2x(
     pygame.image.load(pipe_path).convert_alpha()
 )
 
 # Load and scale background image
-bg_path = os.path.join(IMG_DIR, "bg.png")
+bg_path = os.path.join("imgs", "bg.png")
 bg_raw = pygame.image.load(bg_path).convert_alpha()
 bg_img = pygame.transform.scale(bg_raw, (600, 900))
 
 # Load and scale bird images
 bird_images = []
 for x in range(1, 4):
-    bird_path = os.path.join(IMG_DIR, f"bird{x}.png")
+    bird_path = os.path.join("imgs", f"bird{x}.png")
     bird_img = pygame.image.load(bird_path)
     bird_images.append(pygame.transform.scale2x(bird_img))
 
 # Load and scale base image
-base_path = os.path.join(IMG_DIR, "base.png")
+base_path = os.path.join("imgs", "base.png")
 base_img = pygame.transform.scale2x(
     pygame.image.load(base_path).convert_alpha()
 )
@@ -125,7 +119,7 @@ class Bird:
         """
         self.img_count += 1
 
-        # For animation of bird, loop through three images
+        # For animation of the bird, loop through three images
         if self.img_count <= self.ANIMATION_TIME:
             self.img = self.IMGS[0]
         elif self.img_count <= self.ANIMATION_TIME * 2:
@@ -138,7 +132,7 @@ class Bird:
             self.img = self.IMGS[0]
             self.img_count = 0
 
-        # So when the bird is nose diving, it isn't flapping
+        # So when the bird is nosediving, it isn't flapping
         if self.tilt <= -80:
             self.img = self.IMGS[1]
             self.img_count = self.ANIMATION_TIME * 2
@@ -355,7 +349,7 @@ def main(win):
                     bird.jump()
                     started = True
 
-        # Move bird, base, and pipes
+        # Move the bird, base, and pipes
         if started:
             bird.move()
             base.move()
@@ -364,7 +358,7 @@ def main(win):
             rem = []
             for pipe in pipes:
                 pipe.move()
-                # Check for collision
+                # Check for collisions
                 if pipe.collide(bird):
                     end_screen(win)
 
