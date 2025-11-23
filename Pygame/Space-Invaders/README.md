@@ -64,11 +64,11 @@ project-root/
     │   └── pixel_laser_yellow.png
     │
     └── sounds/
-        └── badass_victory.wav
         └── explosion.wav
         └── game_over.wav
         └── game_start.wav
-        └── projectile_lasers.wav
+        └── laser.wav
+        └── victory.wav
 ```
 
 ---
