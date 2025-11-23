@@ -197,8 +197,10 @@ def main():
     FPS = 60
     level = 0
     lives = 5
-    main_font = pygame.font.SysFont("comicsans", 50)
-    lost_font = pygame.font.SysFont("comicsans", 60)
+    main_font = pygame.font.Font("assets/font/PressStart2P-Regular.ttf", 24)
+    lost_font = pygame.font.Font("assets/font/PressStart2P-Regular.ttf", 36)
+    # main_font = pygame.font.SysFont("impact", 50)
+    # lost_font = pygame.font.SysFont("impact", 60)
 
     enemies = []
     wave_length = 5
@@ -305,7 +307,8 @@ def main():
 
 
 def main_menu():
-    title_font = pygame.font.SysFont("comicsans", 57)
+    # title_font = pygame.font.SysFont("impact", 57)
+    title_font = pygame.font.Font("assets/font/PressStart2P-Regular.ttf", 28)
     run = True
 
     while run:
