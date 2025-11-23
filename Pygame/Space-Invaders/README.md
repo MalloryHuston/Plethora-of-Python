@@ -51,16 +51,20 @@ project-root/
     ├── font/
     │   └── PressStart2P-Regular.ttf
     │
-    └── imgs/
-        ├── background-black.png
-        ├── pixel_ship_red_small.png
-        ├── pixel_ship_green_small.png
-        ├── pixel_ship_blue_small.png
-        ├── pixel_ship_yellow.png
-        ├── pixel_laser_red.png
-        ├── pixel_laser_green.png
-        ├── pixel_laser_blue.png
-        └── pixel_laser_yellow.png
+    ├── imgs/
+    │   └── background-black.png
+    │   └── pixel_ship_red_small.png
+    │   └── pixel_ship_green_small.png
+    │   └── pixel_ship_blue_small.png
+    │   └── pixel_laser_green.png
+    │   └── pixel_laser_blue.png
+    │   └── pixel_laser_yellow.png
+    │
+    ├── sounds/
+        └── badass_victory.wav
+        └── game_over.wav
+        └── game_start.wav
+        └── projectile_lasers.wav
 ```
 
 ---
