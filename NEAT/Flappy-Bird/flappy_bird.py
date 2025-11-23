@@ -1,8 +1,8 @@
 """
 The classic game of Flappy Bird. Made with Python, Pygame,
-and NEAT. Features pixel perfect collision using masks :O
+and NEAT. Features pixel perfect collisions using masks :O
 
-Date Modified: November 5, 2025
+Date Modified: November 22, 2025
 Author: Mallory Huston
 Estimated Work Time: 7.5 hours (1.5 just for that damn collision)
 """
@@ -12,7 +12,7 @@ import random
 import os
 import neat
 
-# Initialize pygame and font
+# Initialize Pygame and font
 pygame.init()
 pygame.font.init()
 
@@ -28,32 +28,26 @@ DRAW_LINES = False
 WIN = pygame.display.set_mode((WIN_WIDTH, WIN_HEIGHT))
 pygame.display.set_caption("Flappy Bird")
 
-# Load images (macOS)
-IMG_DIR = "/Users/malpal101/Plethora-of-Python/NEAT/Flappy-Bird/imgs"
-
-# Load images (Windows)
-# IMG_DIR = "C:/Users/User/Plethora-of-Python/NEAT/Flappy-Bird/imgs"
-
 # Load and scale pipe image
-pipe_path = os.path.join(IMG_DIR, "pipe.png")
+pipe_path = os.path.join("imgs", "pipe.png")
 pipe_img = pygame.transform.scale2x(
     pygame.image.load(pipe_path).convert_alpha()
 )
 
 # Load and scale background image
-bg_path = os.path.join(IMG_DIR, "bg.png")
+bg_path = os.path.join("imgs", "bg.png")
 bg_raw = pygame.image.load(bg_path).convert_alpha()
 bg_img = pygame.transform.scale(bg_raw, (600, 900))
 
 # Load and scale bird images
 bird_images = []
 for x in range(1, 4):
-    bird_path = os.path.join(IMG_DIR, f"bird{x}.png")
+    bird_path = os.path.join("imgs", f"bird{x}.png")
     bird_img = pygame.image.load(bird_path)
     bird_images.append(pygame.transform.scale2x(bird_img))
 
 # Load and scale base image
-base_path = os.path.join(IMG_DIR, "base.png")
+base_path = os.path.join("imgs", "base.png")
 base_img = pygame.transform.scale2x(
     pygame.image.load(base_path).convert_alpha()
 )
@@ -447,7 +441,7 @@ def eval_genomes(genomes, config):
         add_pipe = False
         for pipe in pipes:
             pipe.move()
-            # Check for collision
+            # Check for collisions
             for bird in birds:
                 if pipe.collide(bird, win):
                     ge[birds.index(bird)].fitness -= 1
