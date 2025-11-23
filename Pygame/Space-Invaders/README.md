@@ -65,12 +65,12 @@ project-root/
     │   └── pixel_ship_red_small.png
     │   └── pixel_ship_yellow.png
     │
-    └── sounds/
-        └── explosion.wav
-        └── game-over.wav
-        └── game-start.wav
-        └── laser.wav
-        └── victory.wav
+    ├── sounds/
+    │   └── explosion.wav
+    │   └── game-over.wav
+    │   └── game-start.wav
+    │   └── laser.wav
+    │   └── victory.wav
 ```
 
 ---
