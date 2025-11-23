@@ -165,7 +165,7 @@ class Pipe:
         self.x = x
         self.height = 0
 
-        # Where the top and the bottom of the pope is
+        # Where the top and the bottom of the pipe is
         self.top = 0
         self.bottom = 0
 
