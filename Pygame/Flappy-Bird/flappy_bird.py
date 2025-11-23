@@ -21,7 +21,7 @@ WIN_HEIGHT = 800
 FLOOR = 730
 PIPE_VEL = 5
 STAT_FONT = pygame.font.SysFont("comicsans", 50)
-END_FONT = pygame.font.SysFont("comicsans", 70)
+END_FONT = pygame.font.SysFont("comicsans", 50)
 
 # Set up window
 WIN = pygame.display.set_mode((WIN_WIDTH, WIN_HEIGHT))
