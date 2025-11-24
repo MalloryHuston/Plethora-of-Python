@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-# keylogger.py – For personal/authorized testing only.
+# For personal/authorized testing only
 # Works on Debian (aarch64) with pynput
 
 from pynput.keyboard import Listener
