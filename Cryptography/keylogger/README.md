@@ -1,4 +1,4 @@
-# Keylogger Tutorial!
+# Keylogger Tutorial
 
 The package ``pynput.keyboard`` contains classes for controlling and monitoring the keyboard. ```pynput``` is the *ultimate* Python library for capturing keyboard inputs – one of the coolest uses of this is making keyloggers.
 
