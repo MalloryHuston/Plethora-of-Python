@@ -15,7 +15,7 @@ pip install pynput
 Run the following command in your computer's terminal:
 
 ```bash
-python keylogger.py
+python main.py
 ```
 
 ## Code Citations
