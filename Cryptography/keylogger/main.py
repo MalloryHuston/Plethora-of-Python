@@ -4,7 +4,7 @@
 # Works on Linux Debian (aarch64)
 
 import pynput
-from pynput.keyboard import Listener
+from pynput.keyboard import Key, Listener
 
 keys = []
 
