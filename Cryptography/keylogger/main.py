@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 # For personal/authorized testing only
-# Works on Debian (aarch64) with pynput
+# Works on Linux Debian (aarch64) with pynput
 
 from pynput.keyboard import Listener
 
