@@ -2,7 +2,7 @@
 
 This is an example application featured in NetworkChuck's <a href="https://youtu.be/UtMMjXOlRQc">Python Malware Tutorial</a>.
 
-### Instructions
+## Instructions
 
 **Step 1:**
 Make a folder called ``ransomware`` and create a few random ``.txt`` files with some silly phrases in them:
