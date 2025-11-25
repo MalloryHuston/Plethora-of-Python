@@ -1,4 +1,4 @@
-import requests # type: ignore
+import requests  # type: ignore
 import threading
 
 
@@ -46,10 +46,12 @@ data = {
     'cc_cvv': '234',
 }
 
+
 def do_request():
     while True:
         response = requests.post(url, data=data).text
         print(response)
+
 
 threads = []
 
