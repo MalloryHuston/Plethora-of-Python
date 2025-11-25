@@ -101,9 +101,3 @@ These examples are excellent for:
 If you have similar examples or educational scripts on scam prevention or honeypot analysis, feel free to open a pull request.
 
 Stay safe, stay ethical.
-
----
-
-### 📜 License
-
-MIT License — for educational use only.
