@@ -39,3 +39,4 @@ venv
 plethora
 .history/
 **/.DS_Store
+.fake
