@@ -1,4 +1,4 @@
-import requests # type: ignore
+import requests  # type: ignore
 import os
 import random
 import string
@@ -16,7 +16,7 @@ for name in names:
     name_extra = ''.join(random.choice(string.digits))
 
     username = name.lower() + name_extra + '@yahoo.com'
-    password = ''.join(random.choice(chars) for i in range (8))
+    password = ''.join(random.choice(chars) for i in range(8))
 
     requests.post(url, allow_redirects=False, data={
         'auid26jauysd2uasdasdasd': username,
@@ -24,5 +24,3 @@ for name in names:
     })
 
     print('sending username %s and password %s' % (username, password))
-
-
