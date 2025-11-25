@@ -38,3 +38,4 @@ nosetests.xml
 venv
 plethora
 .history/
+**/.DS_Store
