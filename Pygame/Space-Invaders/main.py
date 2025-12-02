@@ -307,7 +307,7 @@ def main():
 
 def main_menu():
     # title_font = pygame.font.SysFont("impact", 57)
-    title_font = pygame.font.Font("assets/fonts/PressStart2P.ttf", 28)
+    title_font = pygame.font.Font("assets/fonts/PressStart2P.ttf", 27)
     run = True
 
     while run:
