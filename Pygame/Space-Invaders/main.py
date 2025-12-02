@@ -13,7 +13,7 @@ WIN = pygame.display.set_mode((WIDTH, HEIGHT))
 pygame.display.set_caption("Space Invaders")
 
 # Load images
-# Enemy ships
+# Enemy ships (blue: 50 x 50 pixels, green & red: 70 x 50 pixels)
 RED_SPACE_SHIP = pygame.image.load(
     os.path.join("assets/imgs", "pixel_ship_red_small.png")
 )
@@ -24,12 +24,12 @@ BLUE_SPACE_SHIP = pygame.image.load(
     os.path.join("assets/imgs", "pixel_ship_blue_small.png")
 )
 
-# Player ship
+# Player ship (100 x 90 pixels)
 YELLOW_SPACE_SHIP = pygame.image.load(
     os.path.join("assets/imgs", "pixel_ship_yellow.png")
 )
 
-# Lasers
+# Lasers (100 x 90 pixels)
 RED_LASER = pygame.image.load(
     os.path.join("assets/imgs", "pixel_laser_red.png")
 )
@@ -43,7 +43,7 @@ YELLOW_LASER = pygame.image.load(
     os.path.join("assets/imgs", "pixel_laser_yellow.png")
 )
 
-# Background
+# Background (400 x 400 pixels)
 BG = pygame.transform.scale(
     pygame.image.load(os.path.join("assets/imgs", "background-black.png")),
     (WIDTH, HEIGHT),
