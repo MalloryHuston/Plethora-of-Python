@@ -3,9 +3,10 @@ import pygame
 import os
 import random
 
-# Initialize Pygame and font
+# Initialize Pygame, font, and mixer
 pygame.init()
 pygame.font.init()
+pygame.mixer.init()
 
 # Set up display
 WIDTH, HEIGHT = 750, 750
@@ -48,6 +49,18 @@ BG = pygame.transform.scale(
     pygame.image.load(os.path.join("assets/imgs", "background-black.png")),
     (WIDTH, HEIGHT),
 )
+
+# Load sounds
+LASER_SOUND = pygame.mixer.Sound("assets/sounds/laser.wav")
+# ENEMY_LASER_SOUND = pygame.mixer.Sound("assets/sounds/enemy-laser.wav")
+EXPLOSION_SOUND = pygame.mixer.Sound("assets/sounds/explosion.wav")
+GAME_START_SOUND = pygame.mixer.Sound("assets/sounds/game-start.wav")
+GAME_OVER_SOUND = pygame.mixer.Sound("assets/sounds/game-over.wav")
+VICTORY_SOUND = pygame.mixer.Sound("assets/sounds/victory.wav")
+
+# Load background music for gameplay
+pygame.mixer.music.load("assets/sounds/space-invaders-theme.mp3")
+pygame.mixer.music.set_volume(0.4)
 
 
 class Laser:
@@ -193,10 +206,20 @@ def collide(obj1, obj2):
 
 
 def main():
+    pygame.mixer.music.play(-1)
     run = True
     FPS = 60
     level = 0
     lives = 3
+    score = 0
+    high_score = 0
+
+    try:
+        with open("highscore.txt", "r") as file:
+            high_score = int(file.read())
+    except (FileNotFoundError, ValueError):
+        high_score = 0
+
     main_font = pygame.font.Font("assets/fonts/PressStart2P.ttf", 24)
     lost_font = pygame.font.Font("assets/fonts/PressStart2P.ttf", 36)
     # main_font = pygame.font.SysFont("impact", 50)
@@ -221,9 +244,11 @@ def main():
         # Draw text
         lives_label = main_font.render(f"Lives: {lives}", 1, (255, 255, 255))
         level_label = main_font.render(f"Level: {level}", 1, (255, 255, 255))
+        score_label = main_font.render(f"Score: {score}", 1, (255, 255, 255))
 
         WIN.blit(lives_label, (10, 10))
         WIN.blit(level_label, (WIDTH - level_label.get_width() - 10, 10))
+        WIN.blit(score_label, (WIDTH / 2 - score_label.get_width() / 2, 10))
 
         for enemy in enemies:
             enemy.draw(WIN)
@@ -243,9 +268,15 @@ def main():
         if lives <= 0 or player.health <= 0:
             lost = True
             lost_count += 1
+            if lost_count == 1:
+                GAME_OVER_SOUND.play()
 
         if lost:
+            pygame.mixer.music.stop()
             if lost_count > FPS * 3:
+                if score > high_score:
+                    with open("highscore.txt", "w") as file:
+                        file.write(str(score))
                 run = False
             else:
                 continue
@@ -253,6 +284,10 @@ def main():
         if len(enemies) == 0:
             level += 1
             wave_length += 5
+            enemy_vel += 0.2
+            laser_vel += 0.1
+            VICTORY_SOUND.play()
+
             for i in range(wave_length):
                 enemy = Enemy(
                     random.randrange(50, WIDTH - 100),
@@ -287,6 +322,7 @@ def main():
         # SHOOT (press 'Space Bar')
         if keys[pygame.K_SPACE]:
             player.shoot()
+            LASER_SOUND.play()
 
         for enemy in enemies[:]:
             enemy.move(enemy_vel)
@@ -294,6 +330,7 @@ def main():
 
             if random.randrange(0, 2 * 60) == 1:
                 enemy.shoot()
+                # ENEMY_LASER_SOUND.play()
 
             if collide(enemy, player):
                 player.health -= 10
@@ -303,6 +340,15 @@ def main():
                 enemies.remove(enemy)
 
         player.move_lasers(-laser_vel, enemies)
+        for laser in player.lasers[:]:
+            for enemy in enemies[:]:
+                if laser.collision(enemy):
+                    score += 100
+                    EXPLOSION_SOUND.play()
+                    if enemy in enemies:
+                        enemies.remove(enemy)
+                    if laser in player.lasers:
+                        player.lasers.remove(laser)
 
 
 def main_menu():
@@ -323,7 +369,9 @@ def main_menu():
             if event.type == pygame.QUIT:
                 run = False
             if event.type == pygame.MOUSEBUTTONDOWN:
+                GAME_START_SOUND.play()
                 main()
+
     pygame.quit()
 
 
