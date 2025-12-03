@@ -205,6 +205,33 @@ def collide(obj1, obj2):
     return obj1.mask.overlap(obj2.mask, (offset_x, offset_y)) is not None
 
 
+def pause_menu():
+    paused = True
+    pause_font = pygame.font.Font("assets/fonts/PressStart2P.ttf", 24)
+    resume_label = pause_font.render("Press R to Resume", 1, (255, 255, 255))
+    quit_label = pause_font.render("Press Q to Quit", 1, (255, 255, 255))
+
+    pygame.mixer.music.pause()
+
+    while paused:
+        WIN.blit(BG, (0, 0))
+        WIN.blit(resume_label, (WIDTH / 2 - resume_label.get_width() / 2, 350))
+        WIN.blit(quit_label, (WIDTH / 2 - quit_label.get_width() / 2, 400))
+        pygame.display.update()
+
+        for event in pygame.event.get():
+            if event.type == pygame.QUIT:
+                pygame.quit()
+                exit()
+            if event.type == pygame.KEYDOWN:
+                if event.key == pygame.K_r:
+                    pygame.mixer.music.unpause()
+                    paused = False
+                if event.key == pygame.K_q:
+                    pygame.quit()
+                    exit()
+
+
 def main():
     pygame.mixer.music.play(-1)
     run = True
@@ -264,6 +291,13 @@ def main():
     while run:
         clock.tick(FPS)
         redraw_window()
+
+        for event in pygame.event.get():
+            if event.type == pygame.QUIT:
+                quit()
+            if event.type == pygame.KEYDOWN:
+                if event.key == pygame.K_ESCAPE:
+                    pause_menu()
 
         if lives <= 0 or player.health <= 0:
             lost = True
