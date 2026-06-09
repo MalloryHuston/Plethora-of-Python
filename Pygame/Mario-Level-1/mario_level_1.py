@@ -8,7 +8,7 @@ import cProfile
 __author__ = "Mallory Huston"
 
 """
-This is an attempt ot recreate the first level of
+This is an attempt to recreate the first level of
 Super Mario Bros. (1985) for the NES.
 """
 
