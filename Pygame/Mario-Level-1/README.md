@@ -5,7 +5,7 @@ An attempt to recreate the first level of Super Mario Bros.
 
 ![screenshot](screenshot.png)
 
-CONTROLS:
+**CONTROLS:**
 
 Arrow keys for direction
 
@@ -13,7 +13,7 @@ Arrow keys for direction
 
 's' for action (fireball, run)
 
-DEPENDENCIES:
+**DEPENDENCIES:**
 
 Pygame 1.9.1 (Python 2)
 
@@ -25,10 +25,10 @@ To install dependencies for Python 2.x:
 pip install -r requirements.txt
 ```
 
-VIDEO DEMO:
+**VIDEO DEMO:**
 
 http://www.youtube.com/watch?v=HBbzYKMfx5Y
 
-DISCLAIMER:
+**DISCLAIMER:**
 
 This project is intended for non-commercial educational purposes.
